@@ -26,6 +26,23 @@ def test_i1_archivo_real_hasta_cada_final(camino, final, variables):
     assert sesion.variables == variables
 
 
+@pytest.mark.parametrize("camino, final, variables", RUTAS_A_FINALES, ids=["E4_rescate", "E5_eco", "E6_silencio"])
+def test_i1_deshacer_desde_un_final_tras_cargar_el_archivo(camino, final, variables):
+    """Extensión de I1 por SC01: desde E4, E5 o E6 se regresa a E3 con los valores previos a esa elección."""
+    sesion = Sesion(cargar_historia(REFERENCIA))
+    for id_opcion in camino[:-1]:
+        sesion.elegir(id_opcion)
+    variables_en_e3 = sesion.variables
+    sesion.elegir(camino[-1])
+    assert sesion.escena_actual.id == final
+
+    assert sesion.deshacer().aceptada
+    assert sesion.escena_actual.id == "E3"
+    assert sesion.variables == variables_en_e3
+    assert sesion.terminada is False
+    assert "cortar" in [o.id for o in sesion.opciones_disponibles()]
+
+
 class ConsolaGuionada:
     """Simula al lector: entrega las líneas del guion y guarda todo lo impreso."""
 
@@ -59,3 +76,15 @@ def test_i1_consola_completa_con_entradas_invalidas_reinicio_y_final():
     assert "Partida reiniciada." in texto
     assert "*** FIN — desenlace E6 ***" in texto  # revisar, continuar, cortar
     assert sesion.escena_actual.id == "E6"
+
+
+def test_i1_consola_deshacer_desde_un_final():
+    sesion = Sesion(cargar_historia(REFERENCIA))
+    lector = ConsolaGuionada(["1", "2", "2", "d", "d", "1", "s"])  # E6, deshacer, deshacer, activar sin verificar
+    Consola(sesion, entrada=lector.entrada, salida=lector.salida).ejecutar()
+    texto = lector.texto
+    assert "*** FIN — desenlace E6 ***" in texto
+    assert "Se deshizo la última decisión." in texto
+    assert "No hay una decisión para deshacer." in texto
+    assert "*** FIN — desenlace E5 ***" in texto
+    assert sesion.escena_actual.id == "E5"

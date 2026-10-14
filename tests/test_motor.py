@@ -107,6 +107,19 @@ def test_u5_reiniciar_restaura_escena_y_variables_iniciales(sesion, camino):
     assert ids(sesion.opciones_disponibles()) == ["revisar"]
 
 
+@pytest.mark.parametrize("camino", [["revisar"], ["revisar", "investigar"], ["revisar", "investigar", "activar_codigo"]])
+def test_u5_reiniciar_elimina_historial(sesion, camino):
+    """Extensión de U5 por SC01: tras reiniciar no hay retroceso disponible."""
+    for id_opcion in camino:
+        sesion.elegir(id_opcion)
+    assert sesion.puede_deshacer is True
+    sesion.reiniciar()
+    assert sesion.puede_deshacer is False
+    assert sesion.deshacer().aceptada is False
+    assert sesion.escena_actual.id == "E1"
+    assert sesion.variables == {"conoce_origen": False, "confia_en_la_voz": False}
+
+
 # ---------------------------------------------------------------- Bloqueo
 def test_bloqueo_en_partida_se_detecta_y_reiniciar_lo_resuelve():
     from motor.cargador import cargar_historia

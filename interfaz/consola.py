@@ -9,7 +9,6 @@ from typing import Callable
 from motor.sesion import Sesion
 
 LINEA = "=" * 60
-COMANDOS = {"r": "reiniciar", "s": "salir"}
 
 
 class Consola:
@@ -47,6 +46,12 @@ class Consola:
         clave = comando.lower()
         if clave in ("s", "salir"):
             return False
+        if clave in ("d", "deshacer"):
+            resultado = self.sesion.deshacer()
+            self._salida(resultado.mensaje)
+            if resultado.aceptada:
+                self.mostrar_escena()
+            return True
         if clave in ("r", "reiniciar"):
             self._salida(self.sesion.reiniciar().mensaje)
             self.mostrar_escena()
@@ -87,9 +92,11 @@ class Consola:
         self._salida(self._ayuda())
 
     def _ayuda(self) -> str:
-        if self.sesion.terminada or self.sesion.bloqueada:
-            return "Comandos: r = reiniciar · s = salir"
-        return "Comandos: número de opción · r = reiniciar · s = salir"
+        comandos = [] if self.sesion.terminada or self.sesion.bloqueada else ["número de opción"]
+        if self.sesion.puede_deshacer:
+            comandos.append("d = deshacer")
+        comandos += ["r = reiniciar", "s = salir"]
+        return "Comandos: " + " · ".join(comandos)
 
     def _traducir_opcion(self, comando: str) -> str | None:
         """Convierte '2' en el ID de la segunda opción visible. Un ID escrito se pasa tal cual."""

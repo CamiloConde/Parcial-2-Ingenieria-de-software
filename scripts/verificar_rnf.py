@@ -143,7 +143,7 @@ def _generar_entradas(historia, cantidad: int, semilla: int) -> list[str]:
         elif tipo < 0.65:
             entradas.append(azar.choice(ids_opciones))
         elif tipo < 0.72:
-            entradas.append(azar.choice(["r", "R", " reiniciar "]))
+            entradas.append(azar.choice(["r", "R", " reiniciar ", "d", "D", "deshacer", "d", "d"]))
         elif tipo < 0.85:
             entradas.append(azar.choice(basura))
         else:
@@ -157,6 +157,8 @@ def _sera_aceptada(sesion: Sesion, texto: str) -> bool:
     comando = texto.strip()
     if comando.lower() in ("r", "reiniciar"):
         return True
+    if comando.lower() in ("d", "deshacer"):
+        return sesion.puede_deshacer
     disponibles = [o.id for o in sesion.opciones_disponibles()]
     if comando.isascii() and comando.isdigit():
         return 1 <= int(comando) <= len(disponibles)
