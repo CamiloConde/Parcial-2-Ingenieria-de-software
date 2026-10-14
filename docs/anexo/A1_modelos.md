@@ -153,17 +153,12 @@ stateDiagram-v2
   Validando --> Rechazada : errores de contenido
   Rechazada --> [*]
   Validando --> EnCurso : historia válida / escena = inicio, variables iniciales
-  EnCurso --> EnCurso : opción válida hacia escena no final / aplica efectos
-  EnCurso --> EnCurso : entrada inválida / sin cambios
-  EnCurso --> Finalizada : opción válida hacia escena final
+  EnCurso --> EnCurso : opción válida a escena no final / aplica efectos<br/>entrada inválida / sin cambios<br/>reiniciar / borra historial<br/>deshacer [hay anterior] / restaura instantánea
+  EnCurso --> Finalizada : opción válida a escena final
   EnCurso --> Bloqueada : escena no final sin opciones habilitadas
-  EnCurso --> EnCurso : reiniciar / borra historial
-  Finalizada --> EnCurso : reiniciar / borra historial
-  Bloqueada --> EnCurso : reiniciar / borra historial
-  EnCurso --> EnCurso : deshacer [hay anterior] / restaura instantánea
-  Finalizada --> EnCurso : deshacer [hay anterior] / restaura instantánea
-  Bloqueada --> EnCurso : deshacer [hay anterior] / restaura instantánea
+  Finalizada --> EnCurso : reiniciar / borra historial<br/>deshacer [hay anterior] / restaura instantánea
+  Bloqueada --> EnCurso : reiniciar / borra historial<br/>deshacer [hay anterior] / restaura instantánea
+  EnCurso --> [*] : salir
   Finalizada --> [*] : salir
   Bloqueada --> [*] : salir
-  EnCurso --> [*] : salir
 ```

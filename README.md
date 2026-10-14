@@ -9,6 +9,18 @@ Parcial práctico de Ingeniería de Software. El programa de consola interpreta 
 | Camilo Conde Corrales | T00078909 |
 | Miguel Jacome y Yanez | T00078937 |
 
+## Documentos de la entrega
+
+| Documento | Ruta |
+|---|---|
+| Informe (8 páginas como máximo) | `docs/Informe.pdf` |
+| Anexo: diagramas, matriz de trazabilidad y tablero | `docs/Anexo.pdf` |
+| Video de demostración (MP4, 6 minutos como máximo) | **ENLACE_VIDEO_PENDIENTE** |
+| Guion del video | `docs/guion_demostracion.md` |
+| Resultados de pruebas, RNF, recorridos e historial de Git | `evidencias/` |
+
+Las fuentes del informe y del anexo están en `docs/informe/` y `docs/anexo/` (Markdown con diagramas Mermaid).
+
 ## Versiones requeridas
 
 | Herramienta | Versión | Uso |
@@ -79,6 +91,7 @@ python jugar.py --validar historias/invalidas/destino_inexistente.json
 ```bash
 python -m pytest -v                  # todas las pruebas automatizadas
 python scripts/verificar_rnf.py      # verificación de RNF01, RNF02 y RNF03
+python scripts/generar_evidencias.py # regenera evidencias/ (pruebas, RNF, recorridos, historial)
 ```
 
 | Escenario | Archivo |
