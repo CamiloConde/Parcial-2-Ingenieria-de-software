@@ -33,7 +33,7 @@ Cada RF describe un comportamiento observable y su criterio de aceptación (CA).
 
 | ID | Pregunta | Respuesta o supuesto registrado |
 |---|---|---|
-| P1 | La escritora quiere retroceder siempre y el diseñador quiere decisiones irreversibles. ¿El retroceso debe estar disponible siempre, limitarse a cierto número de pasos o prohibirse en decisiones marcadas como irreversibles? | **Acuerdo provisional:** la primera versión no implementa retroceso. No se presupone la decisión final del cliente. |
+| P1 | La escritora quiere retroceder siempre y el diseñador quiere decisiones irreversibles. ¿El retroceso debe estar disponible siempre, limitarse a cierto número de pasos o prohibirse en decisiones marcadas como irreversibles? | **Acuerdo provisional (v1.0):** la primera versión no implementa retroceso; no se presupone la decisión final del cliente. **Respuesta (SC01, hora 6):** un solo nivel de deshacer que revierte todas las consecuencias. Ver RF15-RF17 en la sección 7. |
 | P2 | ¿Las opciones cuyas condiciones no se cumplen deben verse deshabilitadas o no deben verse? | **Supuesto:** no se muestran (N02: "ver únicamente decisiones compatibles"; CA01 exige ver exactamente dos opciones en `E3`). |
 | P3 | ¿El lector debe ver los valores de las variables durante la partida? | **Supuesto:** no; revelaría la lógica del relato. Para pruebas y demostración existe la opción `--depurar`, que muestra el estado. |
 

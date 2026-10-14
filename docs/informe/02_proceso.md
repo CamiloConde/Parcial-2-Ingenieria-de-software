@@ -26,6 +26,8 @@
 | B09 | Pruebas U1-U5 e I1 | Alta | Camilo Conde |
 | B10 | Segunda historia y su redacción | Media | Miguel Jacome |
 | B11 | Verificación de RNF y ejecución en un segundo equipo | Media | Miguel Jacome |
+| B12 | (Cambio SC01) Deshacer la última decisión, U6 y extensión de U5 e I1 | Alta | Camilo Conde |
+| B13 | (Cambio SC01) Actualizar modelos, matriz y README | Alta | Camilo Conde |
 | B14 | Video de demostración y empaquetado | Alta | Ambos |
 
 **Prácticas ágiles aplicadas.**

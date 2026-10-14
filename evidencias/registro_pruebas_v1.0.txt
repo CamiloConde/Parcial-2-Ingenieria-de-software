@@ -1,0 +1,68 @@
+Registro de pruebas de la versión v1.0 (previa a la solicitud de cambio)
+Commit: d090e6c  Fecha: 2026-10-14 22:41 UTC
+Comando: python -m pytest -v
+
+============================= test session starts ==============================
+platform linux -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- python
+rootdir: Parcial-2-Ingenieria-de-software
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.15.1
+collecting ... collected 54 items
+
+tests/test_i1_integracion.py::test_i1_archivo_real_hasta_cada_final[E4_rescate] PASSED [  1%]
+tests/test_i1_integracion.py::test_i1_archivo_real_hasta_cada_final[E5_eco] PASSED [  3%]
+tests/test_i1_integracion.py::test_i1_archivo_real_hasta_cada_final[E6_silencio] PASSED [  5%]
+tests/test_i1_integracion.py::test_i1_consola_completa_con_entradas_invalidas_reinicio_y_final PASSED [  7%]
+tests/test_motor.py::test_u1_condiciones_habilitan_solo_opciones_correspondientes[conoce_origen_verdadero] PASSED [  9%]
+tests/test_motor.py::test_u1_condiciones_habilitan_solo_opciones_correspondientes[conoce_origen_falso] PASSED [ 11%]
+tests/test_motor.py::test_u1_evaluacion_de_condiciones[condiciones0-variables0-True] PASSED [ 12%]
+tests/test_motor.py::test_u1_evaluacion_de_condiciones[condiciones1-variables1-True] PASSED [ 14%]
+tests/test_motor.py::test_u1_evaluacion_de_condiciones[condiciones2-variables2-False] PASSED [ 16%]
+tests/test_motor.py::test_u1_evaluacion_de_condiciones[condiciones3-variables3-True] PASSED [ 18%]
+tests/test_motor.py::test_u1_evaluacion_de_condiciones[condiciones4-variables4-False] PASSED [ 20%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino0-E2-variables_esperadas0] PASSED [ 22%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino1-E3-variables_esperadas1] PASSED [ 24%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino2-E3-variables_esperadas2] PASSED [ 25%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino3-E4-variables_esperadas3] PASSED [ 27%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino4-E5-variables_esperadas4] PASSED [ 29%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino5-E6-variables_esperadas5] PASSED [ 31%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[inexistente] PASSED [ 33%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[de_otra_escena] PASSED [ 35%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[CA02_no_habilitada] PASSED [ 37%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[no_habilitada_inversa] PASSED [ 38%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[en_final] PASSED [ 40%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[vacia] PASSED [ 42%]
+tests/test_motor.py::test_u3_modificar_la_copia_de_variables_no_altera_la_sesion PASSED [ 44%]
+tests/test_motor.py::test_u5_reiniciar_restaura_escena_y_variables_iniciales[inicio] PASSED [ 46%]
+tests/test_motor.py::test_u5_reiniciar_restaura_escena_y_variables_iniciales[E2] PASSED [ 48%]
+tests/test_motor.py::test_u5_reiniciar_restaura_escena_y_variables_iniciales[E3] PASSED [ 50%]
+tests/test_motor.py::test_u5_reiniciar_restaura_escena_y_variables_iniciales[final_E4] PASSED [ 51%]
+tests/test_motor.py::test_u5_reiniciar_restaura_escena_y_variables_iniciales[final_E5] PASSED [ 53%]
+tests/test_motor.py::test_bloqueo_en_partida_se_detecta_y_reiniciar_lo_resuelve PASSED [ 55%]
+tests/test_rnf.py::test_rnf01_historias_nuevas_sin_modificar_el_codigo PASSED [ 57%]
+tests/test_rnf.py::test_rnf02_todos_los_errores_de_contenido_son_claros PASSED [ 59%]
+tests/test_rnf.py::test_rnf03_mil_entradas_aleatorias_sin_fallos_ni_alteraciones PASSED [ 61%]
+tests/test_rnf.py::test_rnf03_regresion_digitos_unicode_no_cierran_la_consola PASSED [ 62%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[archivo_ilegible.json] PASSED [ 64%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[estructura_incorrecta.json] PASSED [ 66%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[campo_faltante.json] PASSED [ 68%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[inicio_inexistente.json] PASSED [ 70%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[escena_duplicada.json] PASSED [ 72%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[opcion_duplicada.json] PASSED [ 74%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[destino_inexistente.json] PASSED [ 75%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[variable_no_declarada.json] PASSED [ 77%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[valor_no_booleano.json] PASSED [ 79%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[final_con_opciones.json] PASSED [ 81%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[no_final_sin_opciones.json] PASSED [ 83%]
+tests/test_u4_validacion.py::test_u4_archivo_inexistente PASSED          [ 85%]
+tests/test_u4_validacion.py::test_u4_archivo_no_utf8 PASSED              [ 87%]
+tests/test_u4_validacion.py::test_u4_variantes_en_memoria[raiz_no_objeto] PASSED [ 88%]
+tests/test_u4_validacion.py::test_u4_variantes_en_memoria[falta_inicio] PASSED [ 90%]
+tests/test_u4_validacion.py::test_u4_variantes_en_memoria[sin_escenas] PASSED [ 92%]
+tests/test_u4_validacion.py::test_u4_variantes_en_memoria[variable_inicial_no_booleana] PASSED [ 94%]
+tests/test_u4_validacion.py::test_u4_variantes_en_memoria[titulo_no_texto] PASSED [ 96%]
+tests/test_u4_validacion.py::test_u4_se_acumulan_todos_los_problemas PASSED [ 98%]
+tests/test_u4_validacion.py::test_u4_historia_de_referencia_es_valida PASSED [100%]
+
+============================== 54 passed in 0.82s ==============================

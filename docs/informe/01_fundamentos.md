@@ -11,7 +11,7 @@
 | Lector (jugador) | Recorre la historia en consola | Leer, elegir, reconocer el final y reiniciar (N02, N05) |
 | Coordinadora del festival | Opera el programa en el evento | Que un error no cierre el programa de forma inesperada (N06) |
 
-**Alcance de la versión entregada.** Incluye: carga de historias desde archivos JSON con un contrato documentado; validación previa con mensajes que indican la causa y el campo o ID; motor de sesión con condiciones de igualdad booleana y efectos de asignación; interfaz de consola, reinicio y detección de bloqueo durante la partida. **Fuera de alcance:** cuentas, base de datos, guardado entre ejecuciones, red, editor visual, audio, imágenes, lenguaje de expresiones y análisis automático de todos los caminos del relato.
+**Alcance de la versión entregada.** Incluye: carga de historias desde archivos JSON con un contrato documentado; validación previa con mensajes que indican la causa y el campo o ID; motor de sesión con condiciones de igualdad booleana y efectos de asignación; interfaz de consola, reinicio, detección de bloqueo durante la partida y deshacer la última decisión (solicitud de cambio SC01). **Fuera de alcance:** cuentas, base de datos, guardado entre ejecuciones, red, editor visual, audio, imágenes, lenguaje de expresiones y análisis automático de todos los caminos del relato.
 
 **Riesgos y mitigación.**
 
