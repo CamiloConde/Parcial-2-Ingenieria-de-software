@@ -56,7 +56,8 @@ python jugar.py --validar historias/invalidas/destino_inexistente.json
 |---|---|
 | `1`, `2`, … | Elegir la opción con ese número |
 | ID de una opción (p. ej. `investigar`) | Elegir esa opción si existe y está habilitada |
-| `r` | Reiniciar la partida (escena y variables iniciales) |
+| `d` | Deshacer la última decisión (un solo nivel; también desde un final) |
+| `r` | Reiniciar la partida (escena y variables iniciales; borra el historial) |
 | `s` | Salir |
 
 ## Rutas para demostrar cada final
@@ -66,6 +67,8 @@ python jugar.py --validar historias/invalidas/destino_inexistente.json
 | **E4 Rescate** | `1`, `1`, `1` | Revisar señal → Investigar archivo → Activar con código | `conoce_origen = verdadero`, `confia_en_la_voz = verdadero` |
 | **E5 El eco** | `1`, `2`, `1` | Revisar señal → Continuar sin investigar → Activar sin verificar | `conoce_origen = falso`, `confia_en_la_voz = verdadero` |
 | **E6 Silencio** | `1`, `2`, `2` (o `1`, `1`, `2`) | Revisar señal → (cualquiera) → Cortar comunicación | `confia_en_la_voz = falso` |
+
+**Deshacer (solicitud de cambio):** en cualquier final escribir `d` regresa a `E3` con los valores anteriores a esa elección. Un segundo `d` no hace nada hasta realizar una nueva elección. Ejemplo: `1`, `1`, `d` → vuelve a `E2` con `conoce_origen = falso`; luego `2` → `E3` muestra "Activar sin verificar".
 
 **Cómo una condición cambia las opciones:** en `E3`, si se investigó el archivo aparece "Activar con código"; si no, aparece "Activar sin verificar". "Cortar comunicación" aparece siempre.
 
@@ -85,6 +88,7 @@ python scripts/verificar_rnf.py      # verificación de RNF01, RNF02 y RNF03
 | U3 Opción inexistente o no habilitada | `tests/test_motor.py::test_u3_*` |
 | U4 Errores de contenido (parametrizada) | `tests/test_u4_validacion.py` |
 | U5 Reiniciar | `tests/test_motor.py::test_u5_*` |
+| U6 Deshacer (solicitud de cambio) | `tests/test_cambio_deshacer.py` |
 | I1 Archivo real + motor hasta un final | `tests/test_i1_integracion.py` |
 | RNF01-RNF03 | `tests/test_rnf.py`, `scripts/verificar_rnf.py` |
 
@@ -141,12 +145,19 @@ Se usa el contrato JSON de referencia de la guía, sin cambios.
 
 Si durante una partida una escena no final se queda sin opciones habilitadas, el programa muestra `BLOQUEO` y permite reiniciar o salir. Ejemplo: `python jugar.py historias/pruebas/bloqueo_en_partida.json`, entradas `1`, `2`.
 
+## Versiones
+
+| Tag | Descripción |
+|---|---|
+| `v1.0` | Versión disponible al recibir la solicitud de cambio (sin retroceso) |
+| `v2.0` | Versión final con deshacer la última decisión (SC01) |
+
 ## Estructura del proyecto
 
 ```
 jugar.py                 punto de entrada (argumentos, manejo de errores)
 interfaz/consola.py      capa de interfaz: muestra escenas y lee comandos
-motor/sesion.py          capa de reglas: estado, condiciones, efectos, reinicio
+motor/sesion.py          capa de reglas: estado, condiciones, efectos, reinicio, deshacer
 motor/modelo.py          capa de contenido: Historia, Escena, Opcion (inmutables)
 motor/cargador.py        lectura del archivo y construcción del modelo
 motor/validador.py       reglas del contrato de contenido
@@ -167,6 +178,7 @@ evidencias/              registros de ejecución, historial de Git, recorridos
 
 ## Limitaciones conocidas
 
+- Deshacer es de un solo nivel y no existe "rehacer", tal como define la solicitud de cambio.
 - Solo hay interfaz de consola; no hay guardado entre ejecuciones (está fuera del alcance).
 - No se analizan automáticamente todos los caminos del relato. Los bloqueos se informan cuando ocurren durante la partida.
 - Los mensajes de JSON mal formado incluyen la descripción técnica en inglés que entrega Python (por ejemplo, `Illegal trailing comma`). La línea, la columna y la categoría sí se muestran en español.

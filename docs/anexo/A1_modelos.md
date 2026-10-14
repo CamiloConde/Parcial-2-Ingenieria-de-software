@@ -9,7 +9,7 @@ flowchart LR
   ARC[("Archivos de historia<br/>historias/*.json")]
   ESC -- "escribe y edita" --> ARC
   ESC -- "valida archivo (--validar)" --> SIS
-  LEC -- "elige opciones, reinicia" --> SIS
+  LEC -- "elige opciones, deshace, reinicia" --> SIS
   COO -- "ejecuta en el evento" --> SIS
   SIS -- "lee y valida" --> ARC
   SIS -- "escena, opciones, desenlace, errores" --> LEC
@@ -28,6 +28,7 @@ flowchart LR
     CU3(["CU03 Elegir opción"])
     CU4(["CU04 Reiniciar partida"])
     CU5(["CU05 Reconocer desenlace"])
+    CU6(["CU06 Deshacer última decisión"])
     CU7(["CU07 Cargar historia"])
   end
   ESC --- CU1
@@ -35,6 +36,7 @@ flowchart LR
   LEC --- CU3
   LEC --- CU4
   LEC --- CU5
+  LEC --- CU6
   CU2 -. "«include»" .-> CU7
   CU7 -. "«include»" .-> CU1
   CU5 -. "«extend»" .-> CU3
@@ -47,6 +49,7 @@ flowchart LR
 | CU03 Elegir opción | RF04, RF05, RF06, RF07, RF08, RF14 |
 | CU04 Reiniciar partida | RF10, RF14 |
 | CU05 Reconocer desenlace | RF09 |
+| CU06 Deshacer última decisión (SC01) | RF15, RF16, RF17 |
 
 ## A3. Diagrama de clases del dominio
 
@@ -78,13 +81,21 @@ classDiagram
     -historia: Historia
     -escena_id: str
     -variables: dict[str, bool]
+    -anterior: EstadoSesion | None
     +escena_actual Escena
     +variables dict
     +terminada bool
     +bloqueada bool
+    +puede_deshacer bool
     +opciones_disponibles() list[Opcion]
     +elegir(id_opcion) Resultado
+    +deshacer() Resultado
     +reiniciar() Resultado
+  }
+  class EstadoSesion {
+    <<inmutable>>
+    +escena_id: str
+    +variables: tuple
   }
   class Resultado {
     +aceptada: bool
@@ -102,6 +113,7 @@ classDiagram
   Escena "1" *-- "0..*" Opcion
   Sesion "0..*" --> "1" Historia : interpreta
   Sesion ..> Resultado : devuelve
+  Sesion "1" o-- "0..1" EstadoSesion : anterior
   ErrorContenido "1" o-- "1..*" Problema
 ```
 
@@ -122,12 +134,13 @@ sequenceDiagram
   S->>O: habilitada(variables)
   O-->>S: verdadero
   alt opción existe y está habilitada
+    S->>S: anterior = EstadoSesion(E2, variables)
     S->>S: aplica efectos (conoce_origen = verdadero)
     S->>S: escena_id = destino (E3)
     S-->>C: Resultado(aceptada = verdadero)
     C-->>L: muestra E3 y sus opciones habilitadas
   else inexistente o no habilitada
-    S-->>C: Resultado(aceptada = falso, motivo)
+    S-->>C: Resultado(aceptada = falso, motivo) · anterior sin cambios
     C-->>L: muestra motivo, escena sin cambios
   end
 ```
@@ -144,9 +157,12 @@ stateDiagram-v2
   EnCurso --> EnCurso : entrada inválida / sin cambios
   EnCurso --> Finalizada : opción válida hacia escena final
   EnCurso --> Bloqueada : escena no final sin opciones habilitadas
-  EnCurso --> EnCurso : reiniciar
-  Finalizada --> EnCurso : reiniciar
-  Bloqueada --> EnCurso : reiniciar
+  EnCurso --> EnCurso : reiniciar / borra historial
+  Finalizada --> EnCurso : reiniciar / borra historial
+  Bloqueada --> EnCurso : reiniciar / borra historial
+  EnCurso --> EnCurso : deshacer [hay anterior] / restaura instantánea
+  Finalizada --> EnCurso : deshacer [hay anterior] / restaura instantánea
+  Bloqueada --> EnCurso : deshacer [hay anterior] / restaura instantánea
   Finalizada --> [*] : salir
   Bloqueada --> [*] : salir
   EnCurso --> [*] : salir

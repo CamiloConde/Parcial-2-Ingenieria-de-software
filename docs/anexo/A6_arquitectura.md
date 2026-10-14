@@ -4,10 +4,10 @@
 flowchart TB
   subgraph UI["Capa de interfaz"]
     J["jugar.py<br/>argumentos: ruta, --validar, --depurar"]
-    CON["interfaz/consola.py<br/>muestra escenas y opciones,<br/>traduce comandos a IDs,<br/>atrapa errores de contenido"]
+    CON["interfaz/consola.py<br/>muestra escenas y opciones,<br/>traduce comandos (número, d, r, s) a operaciones,<br/>atrapa errores de contenido"]
   end
   subgraph REG["Capa de reglas"]
-    SES["motor/sesion.py<br/>estado de la partida, condiciones,<br/>efectos, reinicio, bloqueo"]
+    SES["motor/sesion.py<br/>estado de la partida, condiciones,<br/>efectos, reinicio, bloqueo,<br/>deshacer (EstadoSesion)"]
   end
   subgraph CONT["Capa de contenido"]
     CAR["motor/cargador.py<br/>lee el archivo y construye el modelo"]
