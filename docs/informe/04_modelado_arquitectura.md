@@ -1,0 +1,15 @@
+## 4. Modelado
+
+Los modelos están en el Anexo: contexto (A1), casos de uso (A2), clases del dominio (A3), secuencia de elegir una opción (A4) y estados de una sesión (A5). Se usa el mismo vocabulario en requisitos, diagramas y código: *historia, escena, opción, condiciones, efectos, sesión, variables, final, bloqueo*. Por ejemplo, el método `Sesion.elegir` del diagrama A4 es el de `motor/sesion.py`, y los estados `EnCurso`, `Finalizada` y `Bloqueada` del diagrama A5 corresponden a las propiedades `terminada` y `bloqueada` de la clase `Sesion`. El mapa narrativo de la historia (A8) es un dato de entrada, no un modelo del software.
+
+## 5. Arquitectura
+
+El diagrama de componentes (Anexo A6) organiza el sistema en tres capas: **contenido** (`motor/modelo.py`, `motor/cargador.py`, `motor/validador.py`, `motor/errores.py`), **reglas** (`motor/sesion.py`) e **interfaz** (`interfaz/consola.py`, `jugar.py`). Las dependencias apuntan solo hacia abajo.
+
+**ADR-01. Separar contenido, reglas e interfaz.**
+*Contexto:* la escritora debe cambiar el relato sin programar (N01) y la segunda historia debe funcionar sin tocar el motor. *Alternativas:* (a) un único script que lee el JSON e imprime con `if` por escena; (b) tres capas con modelo inmutable; (c) aplicación web MVC. *Elección:* (b), con interfaz de consola. *Consecuencias:* (+) el motor no contiene IDs ni variables de ninguna historia, lo que se demuestra cargando `el_faro.json` con otros IDs y variables; (+) `Sesion` se prueba sin consola, de modo que U1-U6 no dependen de entrada y salida; (+) cambiar a web solo reemplazaría `interfaz/`; (−) hay más archivos y la consola debe traducir números a IDs de opción.
+
+**ADR-02. Validación completa antes de jugar, acumulando todos los problemas.**
+*Contexto:* la coordinadora no acepta cierres inesperados y la escritora necesita saber qué corregir (N06). *Alternativas:* (a) detenerse en el primer error; (b) validar de forma perezosa durante la partida; (c) usar la biblioteca `jsonschema`; (d) un validador propio que recorre todo el archivo y acumula los problemas. *Elección:* (d). *Consecuencias:* (+) la escritora ve todos los errores en una sola ejecución, cada uno con categoría, causa y ubicación (`escenas[E3].opciones[cortar].destino`); (+) el motor puede asumir datos válidos, por lo que no hay comprobaciones defensivas en `Sesion`; (+) no agrega dependencias; (−) el validador debe actualizarse si cambia el contrato. `jsonschema` se descartó porque no valida referencias cruzadas (destinos y variables declaradas) y sus mensajes son genéricos y en inglés.
+
+**Separación demostrada con la segunda historia.** `historias/el_faro.json` usa IDs (`F1`…`F4`) y una variable (`tiene_llave`) distintos. Se juega con `python jugar.py historias/el_faro.json` sin modificar `motor/` ni `interfaz/` (RNF01, sección 8).
