@@ -1,0 +1,24 @@
+{
+  "titulo": "La última transmisión",
+  "inicio": "E1",
+  "variables": {
+    "conoce_origen": false,
+    "confia_en_la_voz": false
+  },
+  "escenas": {
+    "E1": {
+      "id": "E1",
+      "texto": "Son las 02:13. Una voz pide ayuda desde la estación Aurora, abandonada hace veinte años. La operadora decide revisar la transmisión.",
+      "final": false,
+      "opciones": [
+        {
+          "id": "revisar",
+          "texto": "Revisar señal",
+          "destino": "E2",
+          "condiciones": {},
+          "efectos": {}
+        }
+      ]
+    }
+  }
+}
