@@ -1,0 +1,81 @@
+Fecha: 2026-10-14 22:43 UTC
+Commit: 9c91f19
+Python: 3.13.16  Sistema: Linux
+Comando: python jugar.py historias/la_ultima_transmision.json --depurar   (entradas: d, 1, 1, d, d, 2, 1, d, 2, s)
+
+============================================================
+  La última transmisión
+============================================================
+
+[E1] Son las 02:13. Una voz pide ayuda desde la estación Aurora, abandonada hace veinte años. La operadora decide revisar la transmisión.
+    (estado: conoce_origen=falso, confia_en_la_voz=falso)
+
+  1. Revisar señal
+Comandos: número de opción · r = reiniciar · s = salir
+> d
+No hay una decisión para deshacer.
+> 1
+Elegiste: Revisar señal
+
+[E2] La señal incluye un código antiguo. Es posible consultar el archivo para averiguar su procedencia o continuar sin investigar.
+    (estado: conoce_origen=falso, confia_en_la_voz=falso)
+
+  1. Investigar archivo
+  2. Continuar sin investigar
+Comandos: número de opción · d = deshacer · r = reiniciar · s = salir
+> 1
+Elegiste: Investigar archivo
+
+[E3] La voz pide activar la antena. Con la información disponible, la operadora debe decidir si confía en ella o corta la comunicación.
+    (estado: conoce_origen=verdadero, confia_en_la_voz=falso)
+
+  1. Activar con código
+  2. Cortar comunicación
+Comandos: número de opción · d = deshacer · r = reiniciar · s = salir
+> d
+Se deshizo la última decisión.
+
+[E2] La señal incluye un código antiguo. Es posible consultar el archivo para averiguar su procedencia o continuar sin investigar.
+    (estado: conoce_origen=falso, confia_en_la_voz=falso)
+
+  1. Investigar archivo
+  2. Continuar sin investigar
+Comandos: número de opción · r = reiniciar · s = salir
+> d
+No hay una decisión para deshacer.
+> 2
+Elegiste: Continuar sin investigar
+
+[E3] La voz pide activar la antena. Con la información disponible, la operadora debe decidir si confía en ella o corta la comunicación.
+    (estado: conoce_origen=falso, confia_en_la_voz=falso)
+
+  1. Activar sin verificar
+  2. Cortar comunicación
+Comandos: número de opción · d = deshacer · r = reiniciar · s = salir
+> 1
+Elegiste: Activar sin verificar
+
+[E5] La operadora activa la antena sin comprobar el origen. Solo recibe un mensaje automático antiguo. La voz se repite hasta el amanecer.
+    (estado: conoce_origen=falso, confia_en_la_voz=verdadero)
+
+*** FIN — desenlace E5 ***
+Comandos: d = deshacer · r = reiniciar · s = salir
+> d
+Se deshizo la última decisión.
+
+[E3] La voz pide activar la antena. Con la información disponible, la operadora debe decidir si confía en ella o corta la comunicación.
+    (estado: conoce_origen=falso, confia_en_la_voz=falso)
+
+  1. Activar sin verificar
+  2. Cortar comunicación
+Comandos: número de opción · r = reiniciar · s = salir
+> 2
+Elegiste: Cortar comunicación
+
+[E6] La operadora interrumpe la comunicación. El origen de la señal queda sin resolver.
+    (estado: conoce_origen=falso, confia_en_la_voz=falso)
+
+*** FIN — desenlace E6 ***
+Comandos: d = deshacer · r = reiniciar · s = salir
+> s
+Hasta pronto.

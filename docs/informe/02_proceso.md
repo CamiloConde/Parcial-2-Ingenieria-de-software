@@ -39,4 +39,4 @@
 
 **Definición de terminado.** Una tarjeta pasa a "Hecho" cuando: (1) el código está en `main`; (2) tiene pruebas automatizadas que pasan con `python -m pytest`; (3) los mensajes al usuario están en español y no muestran trazas de Python; (4) los requisitos, modelos y matriz que la mencionan están actualizados; (5) el otro integrante la revisó.
 
-**Aprendizaje y acción de mejora.** _Se registra al cierre de la entrega._
+**Aprendizaje y acción de mejora.** Al recibir el cambio de la hora 6 comprobamos que haber separado en `Sesion` la validación de la opción (`_opcion_habilitada`) de la modificación del estado (`_aplicar`) permitió agregar deshacer en un solo punto: guardar la instantánea justo antes de `_aplicar`. Esa separación salió del diseño pensado para las pruebas U3, no de prever el cambio. Además, la verificación automatizada de RNF03 encontró un defecto (`'²'`) que las pruebas escritas a mano no habían cubierto. **Acción de mejora:** en el próximo proyecto, desde el primer incremento (y no al final) agregaremos una prueba de entradas aleatorias con semilla fija para cada punto donde el sistema recibe datos del usuario.

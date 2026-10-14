@@ -1,0 +1,50 @@
+Fecha: 2026-10-14 22:43 UTC
+Commit: 9c91f19
+Python: 3.13.16  Sistema: Linux
+Comando: python jugar.py historias/la_ultima_transmision.json --depurar   (entradas: 1, 1, 1, r, s)
+
+============================================================
+  La última transmisión
+============================================================
+
+[E1] Son las 02:13. Una voz pide ayuda desde la estación Aurora, abandonada hace veinte años. La operadora decide revisar la transmisión.
+    (estado: conoce_origen=falso, confia_en_la_voz=falso)
+
+  1. Revisar señal
+Comandos: número de opción · r = reiniciar · s = salir
+> 1
+Elegiste: Revisar señal
+
+[E2] La señal incluye un código antiguo. Es posible consultar el archivo para averiguar su procedencia o continuar sin investigar.
+    (estado: conoce_origen=falso, confia_en_la_voz=falso)
+
+  1. Investigar archivo
+  2. Continuar sin investigar
+Comandos: número de opción · d = deshacer · r = reiniciar · s = salir
+> 1
+Elegiste: Investigar archivo
+
+[E3] La voz pide activar la antena. Con la información disponible, la operadora debe decidir si confía en ella o corta la comunicación.
+    (estado: conoce_origen=verdadero, confia_en_la_voz=falso)
+
+  1. Activar con código
+  2. Cortar comunicación
+Comandos: número de opción · d = deshacer · r = reiniciar · s = salir
+> 1
+Elegiste: Activar con código
+
+[E4] La operadora reconoce el código de emergencia, activa la antena y guía a un equipo de rescate. La transmisión provenía de una expedición aislada.
+    (estado: conoce_origen=verdadero, confia_en_la_voz=verdadero)
+
+*** FIN — desenlace E4 ***
+Comandos: d = deshacer · r = reiniciar · s = salir
+> r
+Partida reiniciada.
+
+[E1] Son las 02:13. Una voz pide ayuda desde la estación Aurora, abandonada hace veinte años. La operadora decide revisar la transmisión.
+    (estado: conoce_origen=falso, confia_en_la_voz=falso)
+
+  1. Revisar señal
+Comandos: número de opción · r = reiniciar · s = salir
+> s
+Hasta pronto.

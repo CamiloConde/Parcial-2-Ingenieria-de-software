@@ -1,0 +1,33 @@
+Fecha: 2026-10-14 22:43 UTC
+Commit: 9c91f19
+Python: 3.13.16  Sistema: Linux
+Comando: python scripts/verificar_rnf.py
+
+RNF01 Modificabilidad del contenido
+  segunda_historia_finales_declarados: ['F3', 'F4']
+  segunda_historia_finales_alcanzados: ['F3', 'F4']
+  escena_E7_agregada_jugable: True
+  hash_codigo_antes: 655b6d5ccd5499301b6c2a551a2a622e034770f301401faf19ac64fb617b6685
+  hash_codigo_despues: 655b6d5ccd5499301b6c2a551a2a622e034770f301401faf19ac64fb617b6685
+  lineas_de_codigo_modificadas: 0
+  cumple: True
+
+RNF02 Claridad de errores
+  OK  archivo_ilegible.json          código=1  - [ARCHIVO_ILEGIBLE] JSON mal formado: Illegal trailing comma before end of object (línea 4, columna 40). (en Parcial-2-Ingenieria-de-software/historias/invalidas/archivo_ilegible.json)
+  OK  campo_faltante.json            código=1  - [CAMPO_FALTANTE] Falta el campo obligatorio 'texto'. (en escenas[E2])
+  OK  destino_inexistente.json       código=1  - [DESTINO_INEXISTENTE] El destino 'E99' no corresponde a ninguna escena. (en escenas[E3].opciones[cortar].destino)
+  OK  escena_duplicada.json          código=1  - [ESCENA_DUPLICADA] El ID de escena 'E2' está repetido. (en escenas[E2])
+  OK  estructura_incorrecta.json     código=1  - [ESTRUCTURA_INCORRECTA] El campo 'escenas' debe ser lista […]; se encontró {'E1': {'id': 'E1', 'texto': 'Son las 02:13. Una voz pide a…. (en escenas)
+  OK  final_con_opciones.json        código=1  - [FINAL_CON_OPCIONES] Una escena final debe tener 0 opciones; tiene 1. (en escenas[E6])
+  OK  inicio_inexistente.json        código=1  - [INICIO_INEXISTENTE] La escena inicial 'E0' no existe en 'escenas'. (en inicio)
+  OK  no_final_sin_opciones.json     código=1  - [NO_FINAL_SIN_OPCIONES] Una escena no final debe tener al menos una opción. (en escenas[E2])
+  OK  opcion_duplicada.json          código=1  - [OPCION_DUPLICADA] El ID de opción 'investigar' está repetido dentro de la escena. (en escenas[E2].opciones[investigar])
+  OK  valor_no_booleano.json         código=1  - [VALOR_NO_BOOLEANO] El valor de 'conoce_origen' en efectos debe ser true o false; se encontró 'si'. (en escenas[E2].opciones[investigar].efectos.conoce_origen)
+  OK  variable_no_declarada.json     código=1  - [VARIABLE_NO_DECLARADA] La variable 'conoce_origin' usada en condiciones no está declarada en 'variables'. (en escenas[E3].opciones[activar_codigo].condiciones.conoce_origin)
+  resultado: 11/11 = 100 %  cumple: True
+
+RNF03 Confiabilidad ante entradas inválidas
+  {"historia": "la_ultima_transmision.json", "semilla": 2026, "entradas": 1000, "aceptadas": 129, "rechazadas": 871, "excepciones_no_controladas": 0, "rechazadas_que_alteraron_estado": 0, "cumple": true}
+  {"historia": "el_faro.json", "semilla": 2026, "entradas": 1000, "aceptadas": 145, "rechazadas": 855, "excepciones_no_controladas": 0, "rechazadas_que_alteraron_estado": 0, "cumple": true}
+
+RESULTADO GLOBAL: CUMPLE

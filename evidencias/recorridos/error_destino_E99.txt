@@ -1,0 +1,10 @@
+Fecha: 2026-10-14 22:43 UTC
+Commit: 9c91f19
+Python: 3.13.16  Sistema: Linux
+Comando: python jugar.py --validar historias/invalidas/destino_inexistente.json
+
+La historia no es válida: 1 problema(s) encontrado(s).
+  - [DESTINO_INEXISTENTE] El destino 'E99' no corresponde a ninguna escena. (en escenas[E3].opciones[cortar].destino)
+Corrija el archivo y vuelva a intentarlo. No se abrió ninguna partida.
+
+(código de salida: 1)

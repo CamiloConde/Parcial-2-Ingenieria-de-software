@@ -1,0 +1,156 @@
+Fecha: 2026-10-14 22:43 UTC
+Commit: 9c91f19
+Python: 3.13.16  Sistema: Linux
+Comando: git log
+
+VERSIONES (tags)
+v1.0            Versión previa a la solicitud de cambio (hora 6): sin retroceso
+v2.0            Versión posterior a la solicitud de cambio SC01: deshacer la última decisión
+
+HISTORIAL (hash | fecha | autor | mensaje)
+9c91f19 | 2026-10-14 22:43:09 +0000 | Camilo Conde <camilandre0510@gmail.com> | SC01: actualiza modelos, arquitectura, README y matriz de trazabilidad (HEAD -> main, tag: v2.0)
+6d65c2d | 2026-10-14 22:42:22 +0000 | Camilo Conde <camilandre0510@gmail.com> | SC01: deshacer la última decisión (un nivel) con U6 y extensión de U5 e I1
+e9d23cf | 2026-10-14 22:41:39 +0000 | Camilo Conde <camilandre0510@gmail.com> | Solicitud de cambio SC01: análisis de impacto, RF15-RF17, ADR-03 y backlog replanificado
+d090e6c | 2026-10-14 22:40:55 +0000 | Camilo Conde <camilandre0510@gmail.com> | README: instalación, ejecución, formato de contenido, rutas a los finales y limitaciones (tag: v1.0)
+e0aecbc | 2026-10-14 22:40:08 +0000 | Camilo Conde <camilandre0510@gmail.com> | Verificación de RNF01-RNF03; corrige cierre de la consola con dígitos Unicode hallado por RNF03
+bcabfe2 | 2026-10-14 22:39:02 +0000 | Camilo Conde <camilandre0510@gmail.com> | Segunda historia: El faro de Punta Gris (4 escenas, una condición y un efecto)
+4d4957f | 2026-10-14 22:38:51 +0000 | Camilo Conde <camilandre0510@gmail.com> | Capa de interfaz: consola, punto de entrada jugar.py y prueba de integración I1
+db148cf | 2026-10-14 22:38:01 +0000 | Camilo Conde <camilandre0510@gmail.com> | Capa de reglas: sesión con opciones condicionadas, efectos, reinicio y bloqueo (U1-U3, U5)
+4be5725 | 2026-10-14 22:37:22 +0000 | Camilo Conde <camilandre0510@gmail.com> | Capa de contenido: modelo, cargador y validador con pruebas U4 parametrizadas
+9ddd64c | 2026-10-14 22:35:37 +0000 | Camilo Conde <camilandre0510@gmail.com> | Modelos UML y arquitectura por capas con decisiones ADR-01 y ADR-02
+1f252a7 | 2026-10-14 22:34:42 +0000 | Camilo Conde <camilandre0510@gmail.com> | Corrige RF04 tras revisión cruzada de requisitos
+bf6973a | 2026-10-14 22:34:33 +0000 | Camilo Conde <camilandre0510@gmail.com> | Requisitos funcionales, no funcionales y preguntas al cliente
+fd71a4a | 2026-10-14 22:33:43 +0000 | Camilo Conde <camilandre0510@gmail.com> | Estructura inicial: historia de referencia, alcance, riesgos y proceso
+
+DETALLE DE ARCHIVOS POR COMMIT (git log --stat)
+
+9c91f19 2026-10-14 22:43 Camilo Conde
+    SC01: actualiza modelos, arquitectura, README y matriz de trazabilidad
+
+ README.md                                | 16 ++++++++++++++--
+ docs/anexo/A1_modelos.md                 | 26 +++++++++++++++++++++-----
+ docs/anexo/A6_arquitectura.md            |  4 ++--
+ docs/anexo/A7_trazabilidad.md            | 26 ++++++++++++++++++++++++++
+ docs/anexo/A8_mapa_y_tablero.md          | 27 +++++++++++++++++++++++++++
+ docs/informe/04_modelado_arquitectura.md |  4 ++--
+ 6 files changed, 92 insertions(+), 11 deletions(-)
+
+6d65c2d 2026-10-14 22:42 Camilo Conde
+    SC01: deshacer la última decisión (un nivel) con U6 y extensión de U5 e I1
+
+ interfaz/consola.py           | 15 ++++++--
+ motor/sesion.py               | 32 ++++++++++++++--
+ scripts/verificar_rnf.py      |  4 +-
+ tests/test_cambio_deshacer.py | 85 +++++++++++++++++++++++++++++++++++++++++++
+ tests/test_i1_integracion.py  | 29 +++++++++++++++
+ tests/test_motor.py           | 13 +++++++
+ 6 files changed, 170 insertions(+), 8 deletions(-)
+
+e9d23cf 2026-10-14 22:41 Camilo Conde
+    Solicitud de cambio SC01: análisis de impacto, RF15-RF17, ADR-03 y backlog replanificado
+
+ docs/informe/01_fundamentos.md       |  2 +-
+ docs/informe/02_proceso.md           |  2 ++
+ docs/informe/03_requisitos.md        |  2 +-
+ docs/informe/07_cambio.md            | 30 ++++++++++++++++
+ evidencias/registro_pruebas_v1.0.txt | 68 ++++++++++++++++++++++++++++++++++++
+ 5 files changed, 102 insertions(+), 2 deletions(-)
+
+d090e6c 2026-10-14 22:40 Camilo Conde
+    README: instalación, ejecución, formato de contenido, rutas a los finales y limitaciones
+
+ README.md                     | 174 ++++++++++++++++++++++++++++++++++++++++--
+ docs/informe/02_proceso.md    |   6 +-
+ docs/informe/03_requisitos.md |   2 +-
+ 3 files changed, 172 insertions(+), 10 deletions(-)
+
+e0aecbc 2026-10-14 22:40 Camilo Conde
+    Verificación de RNF01-RNF03; corrige cierre de la consola con dígitos Unicode hallado por RNF03
+
+ interfaz/consola.py      |   2 +-
+ motor/validador.py       |  12 ++-
+ scripts/__init__.py      |   1 +
+ scripts/verificar_rnf.py | 220 +++++++++++++++++++++++++++++++++++++++++++++++
+ tests/test_rnf.py        |  41 +++++++++
+ 5 files changed, 272 insertions(+), 4 deletions(-)
+
+bcabfe2 2026-10-14 22:39 Camilo Conde
+    Segunda historia: El faro de Punta Gris (4 escenas, una condición y un efecto)
+
+ historias/el_faro.json | 67 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 67 insertions(+)
+
+4d4957f 2026-10-14 22:38 Camilo Conde
+    Capa de interfaz: consola, punto de entrada jugar.py y prueba de integración I1
+
+ interfaz/__init__.py         |   1 +
+ interfaz/consola.py          | 104 +++++++++++++++++++++++++++++++++++++++++++
+ jugar.py                     |  55 +++++++++++++++++++++++
+ tests/test_i1_integracion.py |  61 +++++++++++++++++++++++++
+ 4 files changed, 221 insertions(+)
+
+db148cf 2026-10-14 22:38 Camilo Conde
+    Capa de reglas: sesión con opciones condicionadas, efectos, reinicio y bloqueo (U1-U3, U5)
+
+ motor/sesion.py     |  80 ++++++++++++++++++++++++++++++++++
+ tests/conftest.py   |  13 ++++++
+ tests/test_motor.py | 123 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 216 insertions(+)
+
+4be5725 2026-10-14 22:37 Camilo Conde
+    Capa de contenido: modelo, cargador y validador con pruebas U4 parametrizadas
+
+ historias/invalidas/archivo_ilegible.json      |   5 +
+ historias/invalidas/campo_faltante.json        | 101 ++++++++++++++
+ historias/invalidas/destino_inexistente.json   | 103 ++++++++++++++
+ historias/invalidas/escena_duplicada.json      | 126 +++++++++++++++++
+ historias/invalidas/estructura_incorrecta.json |  24 ++++
+ historias/invalidas/final_con_opciones.json    | 111 +++++++++++++++
+ historias/invalidas/inicio_inexistente.json    | 103 ++++++++++++++
+ historias/invalidas/no_final_sin_opciones.json |  86 ++++++++++++
+ historias/invalidas/opcion_duplicada.json      | 112 +++++++++++++++
+ historias/invalidas/valor_no_booleano.json     | 103 ++++++++++++++
+ historias/invalidas/variable_no_declarada.json | 103 ++++++++++++++
+ historias/pruebas/bloqueo_en_partida.json      |  71 ++++++++++
+ motor/__init__.py                              |   1 +
+ motor/cargador.py                              |  41 ++++++
+ motor/errores.py                               |  46 +++++++
+ motor/modelo.py                                |  69 ++++++++++
+ motor/validador.py                             | 184 +++++++++++++++++++++++++
+ pytest.ini                                     |   4 +
+ requirements.txt                               |   1 +
+ tests/__init__.py                              |   0
+ tests/conftest.py                              |  16 +++
+ tests/test_u4_validacion.py                    |  90 ++++++++++++
+ 22 files changed, 1500 insertions(+)
+
+9ddd64c 2026-10-14 22:35 Camilo Conde
+    Modelos UML y arquitectura por capas con decisiones ADR-01 y ADR-02
+
+ docs/anexo/A1_modelos.md                 | 153 +++++++++++++++++++++++++++++++
+ docs/anexo/A6_arquitectura.md            |  30 ++++++
+ docs/informe/04_modelado_arquitectura.md |  15 +++
+ 3 files changed, 198 insertions(+)
+
+1f252a7 2026-10-14 22:34 Camilo Conde
+    Corrige RF04 tras revisión cruzada de requisitos
+
+ docs/informe/03_requisitos.md | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+bf6973a 2026-10-14 22:34 Camilo Conde
+    Requisitos funcionales, no funcionales y preguntas al cliente
+
+ docs/informe/01_fundamentos.md |  2 +-
+ docs/informe/03_requisitos.md  | 38 ++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 39 insertions(+), 1 deletion(-)
+
+fd71a4a 2026-10-14 22:33 Camilo Conde
+    Estructura inicial: historia de referencia, alcance, riesgos y proceso
+
+ .gitignore                           |   7 +++
+ README.md                            |  10 ++++
+ docs/informe/01_fundamentos.md       |  32 +++++++++++
+ docs/informe/02_proceso.md           |  40 ++++++++++++++
+ historias/la_ultima_transmision.json | 103 +++++++++++++++++++++++++++++++++++
+ 5 files changed, 192 insertions(+)

@@ -1,0 +1,59 @@
+Fecha: 2026-10-14 22:43 UTC
+Commit: 9c91f19
+Python: 3.13.16  Sistema: Linux
+Comando: python jugar.py historias/el_faro.json --depurar   (entradas: 1, 1, r, 2, 1, s)
+
+============================================================
+  El faro de Punta Gris
+============================================================
+
+[F1] Una tormenta apagó el faro de Punta Gris y un barco pesquero se acerca a las rocas. El guardián llega al acantilado empapado.
+    (estado: tiene_llave=falso)
+
+  1. Buscar en el cobertizo
+  2. Correr directo al faro
+Comandos: número de opción · r = reiniciar · s = salir
+> 1
+Elegiste: Buscar en el cobertizo
+
+[F2] La puerta de hierro del faro está cerrada. Las luces del barco se ven cada vez más cerca.
+    (estado: tiene_llave=verdadero)
+
+  1. Abrir con la llave del cobertizo
+  2. Esperar a que pase la tormenta
+Comandos: número de opción · d = deshacer · r = reiniciar · s = salir
+> 1
+Elegiste: Abrir con la llave del cobertizo
+
+[F3] La lámpara vuelve a girar. El barco corrige el rumbo y entra al puerto sin daños.
+    (estado: tiene_llave=verdadero)
+
+*** FIN — desenlace F3 ***
+Comandos: d = deshacer · r = reiniciar · s = salir
+> r
+Partida reiniciada.
+
+[F1] Una tormenta apagó el faro de Punta Gris y un barco pesquero se acerca a las rocas. El guardián llega al acantilado empapado.
+    (estado: tiene_llave=falso)
+
+  1. Buscar en el cobertizo
+  2. Correr directo al faro
+Comandos: número de opción · r = reiniciar · s = salir
+> 2
+Elegiste: Correr directo al faro
+
+[F2] La puerta de hierro del faro está cerrada. Las luces del barco se ven cada vez más cerca.
+    (estado: tiene_llave=falso)
+
+  1. Esperar a que pase la tormenta
+Comandos: número de opción · d = deshacer · r = reiniciar · s = salir
+> 1
+Elegiste: Esperar a que pase la tormenta
+
+[F4] Amanece. El barco encalló en la arena, pero la tripulación llegó a la orilla a nado.
+    (estado: tiene_llave=falso)
+
+*** FIN — desenlace F4 ***
+Comandos: d = deshacer · r = reiniciar · s = salir
+> s
+Hasta pronto.
