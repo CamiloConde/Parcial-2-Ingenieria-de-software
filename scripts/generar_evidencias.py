@@ -7,6 +7,9 @@ Produce:
   evidencias/rnf_resultados.txt       salida de `python scripts/verificar_rnf.py`
   evidencias/recorridos/*.txt         transcripciones de partidas y errores
   evidencias/historial_git.txt        historial de Git con autores, fechas y mensajes
+
+Con --segundo-equipo solo escribe evidencias/ejecucion_segundo_equipo.txt
+(pruebas y RNF ejecutados en el equipo de otro integrante).
 """
 
 import platform
@@ -73,7 +76,26 @@ def recorrido(nombre: str, historia: str, entradas: list[str], depurar: bool = T
     (RECORRIDOS / nombre).write_text(_encabezado(comando) + "\n".join(lineas) + "\n", encoding="utf-8")
 
 
+def segundo_equipo() -> int:
+    codigo_pruebas, pruebas = _ejecutar(["-m", "pytest", "-v", "-p", "no:cacheprovider"])
+    codigo_rnf, rnf = _ejecutar(["scripts/verificar_rnf.py"])
+    usuario = _git("config", "user.name").strip() or "sin configurar"
+    (EVIDENCIAS / "ejecucion_segundo_equipo.txt").write_text(
+        f"Ejecución en un segundo equipo (usuario Git: {usuario})\n"
+        + _encabezado("python -m pytest -v  y  python scripts/verificar_rnf.py")
+        + pruebas
+        + "\n" + "=" * 70 + "\n\n"
+        + rnf,
+        encoding="utf-8",
+    )
+    print(f"Pruebas: {'OK' if codigo_pruebas == 0 else 'CON FALLOS'} · RNF: {'OK' if codigo_rnf == 0 else 'CON FALLOS'}")
+    print("Escrito evidencias/ejecucion_segundo_equipo.txt")
+    return 0 if codigo_pruebas == 0 and codigo_rnf == 0 else 1
+
+
 def main() -> int:
+    if "--segundo-equipo" in sys.argv:
+        return segundo_equipo()
     RECORRIDOS.mkdir(parents=True, exist_ok=True)
 
     codigo_pruebas, salida = _ejecutar(["-m", "pytest", "-v", "-p", "no:cacheprovider"])
