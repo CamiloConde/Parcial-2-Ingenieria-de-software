@@ -1,0 +1,67 @@
+{
+  "titulo": "El faro de Punta Gris",
+  "inicio": "F1",
+  "variables": {
+    "tiene_llave": false
+  },
+  "escenas": [
+    {
+      "id": "F1",
+      "texto": "Una tormenta apagó el faro de Punta Gris y un barco pesquero se acerca a las rocas. El guardián llega al acantilado empapado.",
+      "final": false,
+      "opciones": [
+        {
+          "id": "cobertizo",
+          "texto": "Buscar en el cobertizo",
+          "destino": "F2",
+          "condiciones": {},
+          "efectos": {
+            "tiene_llave": true
+          }
+        },
+        {
+          "id": "correr",
+          "texto": "Correr directo al faro",
+          "destino": "F2",
+          "condiciones": {},
+          "efectos": {}
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "texto": "La puerta de hierro del faro está cerrada. Las luces del barco se ven cada vez más cerca.",
+      "final": false,
+      "opciones": [
+        {
+          "id": "abrir",
+          "texto": "Abrir con la llave del cobertizo",
+          "destino": "F3",
+          "condiciones": {
+            "tiene_llave": true
+          },
+          "efectos": {}
+        },
+        {
+          "id": "esperar",
+          "texto": "Esperar a que pase la tormenta",
+          "destino": "F4",
+          "condiciones": {},
+          "efectos": {}
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "texto": "La lámpara vuelve a girar. El barco corrige el rumbo y entra al puerto sin daños.",
+      "final": true,
+      "opciones": []
+    },
+    {
+      "id": "F4",
+      "texto": "Amanece. El barco encalló en la arena, pero la tripulación llegó a la orilla a nado.",
+      "final": true,
+      "opciones": []
+    }
+  ]
+}
