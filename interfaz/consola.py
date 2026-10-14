@@ -94,7 +94,7 @@ class Consola:
     def _traducir_opcion(self, comando: str) -> str | None:
         """Convierte '2' en el ID de la segunda opción visible. Un ID escrito se pasa tal cual."""
         disponibles = self.sesion.opciones_disponibles()
-        if comando.isdigit():
+        if comando.isascii() and comando.isdigit():  # '²'.isdigit() es True pero int('²') falla
             indice = int(comando) - 1
             if 0 <= indice < len(disponibles):
                 return disponibles[indice].id

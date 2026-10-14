@@ -21,6 +21,12 @@ _CAMPOS_OPCION = (
 )
 
 
+def _resumen(valor, largo: int = 60) -> str:
+    """Representación corta de un valor para no inundar el mensaje de error."""
+    texto = repr(valor)
+    return texto if len(texto) <= largo else texto[: largo - 1] + "…"
+
+
 def _es_booleano(valor) -> bool:
     return isinstance(valor, bool)
 
@@ -38,7 +44,7 @@ def _revisar_campos(objeto: dict, campos, ubicacion: str, problemas: list) -> di
         if not valido:
             categoria = E.VALOR_NO_BOOLEANO if tipo is bool else E.ESTRUCTURA_INCORRECTA
             problemas.append(
-                Problema(categoria, f"El campo '{nombre}' debe ser {_TIPOS[tipo]}; se encontró {valor!r}.", lugar)
+                Problema(categoria, f"El campo '{nombre}' debe ser {_TIPOS[tipo]}; se encontró {_resumen(valor)}.", lugar)
             )
             continue
         if tipo is str and not valor.strip():
@@ -71,7 +77,7 @@ def _revisar_mapa_booleano(mapa: dict, tipo_mapa: str, declaradas, ubicacion: st
             problemas.append(
                 Problema(
                     E.VALOR_NO_BOOLEANO,
-                    f"El valor de '{variable}' en {tipo_mapa} debe ser true o false; se encontró {valor!r}.",
+                    f"El valor de '{variable}' en {tipo_mapa} debe ser true o false; se encontró {_resumen(valor)}.",
                     lugar,
                 )
             )
@@ -100,7 +106,7 @@ def validar(datos) -> list[Problema]:
                 problemas.append(
                     Problema(
                         E.VALOR_NO_BOOLEANO,
-                        f"El valor inicial de '{variable}' debe ser true o false; se encontró {valor!r}.",
+                        f"El valor inicial de '{variable}' debe ser true o false; se encontró {_resumen(valor)}.",
                         f"variables.{variable}",
                     )
                 )
