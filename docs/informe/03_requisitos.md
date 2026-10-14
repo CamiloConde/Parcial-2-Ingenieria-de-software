@@ -9,7 +9,7 @@ Cada RF describe un comportamiento observable y su criterio de aceptación (CA).
 | RF01 | N01 | El sistema carga una historia desde la ruta de un archivo JSON indicada al ejecutar el programa. | `python jugar.py historias/el_faro.json` muestra el título y la escena inicial de ese archivo, no los de otra historia. |
 | RF02 | N01 | Al comenzar una partida, la escena actual es la indicada en `inicio` y cada variable toma el valor declarado en `variables`. | Con la historia de referencia, una sesión nueva está en `E1` con `conoce_origen = falso` y `confia_en_la_voz = falso`. |
 | RF03 | N02 | El sistema muestra el texto de la escena actual. | Al iniciar la historia de referencia se muestra el texto de `E1`. |
-| RF04 | N02 | El sistema muestra las opciones de la escena actual e indica cuáles están disponibles según las condiciones. | En `E3` con `conoce_origen = verdadero` se indica que "Activar con código" y "Cortar comunicación" están disponibles. |
+| RF04 | N02 | El sistema muestra **únicamente** las opciones de la escena actual cuyas condiciones se cumplen todas; un mapa de condiciones vacío habilita la opción. | En `E3` con `conoce_origen = verdadero` se muestran exactamente "Activar con código" y "Cortar comunicación" (CA01); con `conoce_origen = falso`, exactamente "Activar sin verificar" y "Cortar comunicación". |
 | RF05 | N03 | Al elegir una opción habilitada, el sistema aplica todos sus efectos y cambia la escena actual al destino de la opción. | Desde `E2`, elegir `investigar` deja la sesión en `E3` con `conoce_origen = verdadero` (CA01). |
 | RF06 | N03 | Si se solicita una opción inexistente o no habilitada, el motor la rechaza, informa el motivo y no modifica escena ni variables. | En `E3` sin conocer el origen, enviar `activar_codigo` directamente al motor devuelve rechazo y la sesión sigue en `E3` con las mismas variables (CA02). |
 | RF07 | N03 | La interfaz rechaza entradas no reconocidas (texto libre, número fuera de rango, vacío) con un mensaje y sin modificar la partida. | En `E1`, escribir `abc` o `9` muestra "Entrada no válida…" y vuelve a mostrar `E1`. |
@@ -36,3 +36,11 @@ Cada RF describe un comportamiento observable y su criterio de aceptación (CA).
 | P1 | La escritora quiere retroceder siempre y el diseñador quiere decisiones irreversibles. ¿El retroceso debe estar disponible siempre, limitarse a cierto número de pasos o prohibirse en decisiones marcadas como irreversibles? | **Acuerdo provisional:** la primera versión no implementa retroceso. No se presupone la decisión final del cliente. |
 | P2 | ¿Las opciones cuyas condiciones no se cumplen deben verse deshabilitadas o no deben verse? | **Supuesto:** no se muestran (N02: "ver únicamente decisiones compatibles"; CA01 exige ver exactamente dos opciones en `E3`). |
 | P3 | ¿El lector debe ver los valores de las variables durante la partida? | **Supuesto:** no; revelaría la lógica del relato. Para pruebas y demostración existe la opción `--depurar`, que muestra el estado. |
+
+### 3.4 Revisión cruzada: defecto detectado y corrección
+
+Los requisitos se revisaron entre integrantes contra N01-N06 y CA01-CA03 antes de implementar el motor.
+
+| Defecto | Hallazgo | Corrección |
+|---|---|---|
+| D1 (ambigüedad / contradicción) | La primera redacción de RF04 decía "muestra las opciones de la escena actual **e indica cuáles están disponibles**". Admitía mostrar también las opciones no habilitadas (por ejemplo, en gris), lo que contradice N02 ("ver **únicamente** decisiones compatibles") y CA01, que exige ver **exactamente dos** opciones en `E3`. Además su criterio de aceptación no permitía comprobar que la opción no habilitada quedara oculta. | RF04 se reescribió como "muestra **únicamente** las opciones cuyas condiciones se cumplen todas" y su criterio ahora verifica los dos casos de `E3` con conjuntos exactos. Se alineó con el supuesto P2. Cambio visible en el historial de Git (commit "Corrige RF04 tras revisión cruzada de requisitos"). |
