@@ -17,15 +17,15 @@
 |---|---|---|---|
 | B01 | Alcance, actores, riesgos y calidad | Alta | Camilo Conde |
 | B02 | Requisitos RF/RNF y preguntas al cliente | Alta | Camilo Conde |
-| B03 | Revisión cruzada de requisitos | Alta | Miguel Jácome |
+| B03 | Revisión cruzada de requisitos | Alta | Miguel Jacome |
 | B04 | Modelos (contexto, casos de uso, clases, secuencia, estados) | Alta | Camilo Conde |
 | B05 | Arquitectura y decisiones (ADR) | Alta | Camilo Conde |
 | B06 | Cargador y validador con mensajes de error | Alta | Camilo Conde |
 | B07 | Motor de sesión: opciones, elección, estado, reinicio | Alta | Camilo Conde |
 | B08 | Interfaz de consola | Media | Camilo Conde |
 | B09 | Pruebas U1-U5 e I1 | Alta | Camilo Conde |
-| B10 | Segunda historia y su redacción | Media | Miguel Jácome |
-| B11 | Verificación de RNF y ejecución en un segundo equipo | Media | Miguel Jácome |
+| B10 | Segunda historia y su redacción | Media | Miguel Jacome |
+| B11 | Verificación de RNF y ejecución en un segundo equipo | Media | Miguel Jacome |
 | B14 | Video de demostración y empaquetado | Alta | Ambos |
 
 **Prácticas ágiles aplicadas.**
