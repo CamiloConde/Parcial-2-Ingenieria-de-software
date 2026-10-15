@@ -12,6 +12,7 @@ Con --segundo-equipo solo escribe evidencias/ejecucion_segundo_equipo.txt
 (pruebas y RNF ejecutados en el equipo de otro integrante).
 """
 
+import os
 import platform
 import subprocess
 import sys
@@ -45,8 +46,11 @@ def _encabezado(comando: str) -> str:
 
 
 def _git(*args: str) -> str:
+    entorno = dict(os.environ, TZ="America/Bogota")  # fechas del historial en hora de Colombia
     try:
-        return subprocess.run(["git", *args], capture_output=True, text=True, encoding="utf-8", cwd=RAIZ).stdout
+        return subprocess.run(
+            ["git", *args], capture_output=True, text=True, encoding="utf-8", cwd=RAIZ, env=entorno
+        ).stdout
     except FileNotFoundError:
         return ""
 
@@ -125,11 +129,12 @@ def main() -> int:
         encoding="utf-8",
     )
 
-    historial = _git("log", "--date=format:%Y-%m-%d %H:%M:%S %z", "--format=%h | %ad | %an <%ae> | %s%d")
-    estadisticas = _git("log", "--date=format:%Y-%m-%d %H:%M", "--format=%n%h %ad %an%n    %s", "--stat")
+    historial = _git("log", "--date=format-local:%Y-%m-%d %H:%M:%S (hora de Colombia)", "--format=%h | %ad | %aN <%aE> | %s%d")
+    estadisticas = _git("log", "--date=format-local:%Y-%m-%d %H:%M", "--format=%n%h %ad %aN%n    %s", "--stat")
     versiones = _git("tag", "-n1", "--sort=creatordate")
     (EVIDENCIAS / "historial_git.txt").write_text(
         _encabezado("git log")
+        + "Autores unificados con .mailmap (un integrante hizo commits con más de una configuración de Git).\n\n"
         + "VERSIONES (tags)\n"
         + versiones
         + "\nHISTORIAL (hash | fecha | autor | mensaje)\n"

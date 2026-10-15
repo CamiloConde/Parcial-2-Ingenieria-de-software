@@ -17,6 +17,7 @@ Parcial práctico de Ingeniería de Software. El programa de consola interpreta 
 | Anexo: diagramas, matriz de trazabilidad y tablero | `docs/Anexo.pdf` |
 | Video de demostración (MP4, 6 minutos como máximo) | **ENLACE_VIDEO_PENDIENTE** |
 | Guion del video | `docs/guion_demostracion.md` |
+| Comprobación manual paso a paso | `docs/verificacion_manual.md` |
 | Resultados de pruebas, RNF, recorridos e historial de Git | `evidencias/` |
 
 Las fuentes del informe y del anexo están en `docs/informe/` y `docs/anexo/` (Markdown con diagramas Mermaid).
@@ -84,7 +85,7 @@ python jugar.py --validar historias/invalidas/destino_inexistente.json
 
 **Cómo una condición cambia las opciones:** en `E3`, si se investigó el archivo aparece "Activar con código"; si no, aparece "Activar sin verificar". "Cortar comunicación" aparece siempre.
 
-**Segunda historia (`el_faro.json`):** `1`, `1` llega a **F3** (la llave del cobertizo habilita "Abrir con la llave"); `2`, `1` llega a **F4** (sin llave solo se puede esperar).
+**Segunda historia (`el_faro.json`):** `1`, `1` llega a **F3** (la llave del cobertizo habilita "Abrir el candado con la llave oxidada"); `2`, `1` llega a **F4** (sin llave solo se puede esperar).
 
 ## Pruebas
 
@@ -188,6 +189,7 @@ evidencias/              registros de ejecución, historial de Git, recorridos
 |---|---|---|
 | Biblioteca estándar de Python (`json`, `dataclasses`, `argparse`, `pathlib`, `hashlib`, `random`, `subprocess`) | PSF License | Programa y scripts |
 | pytest | MIT | Pruebas automatizadas (solo desarrollo) |
+| Mermaid, PlantUML (MIT) y Graphviz (EPL) | MIT / EPL | Solo para dibujar los diagramas del anexo (`docs/anexo/`); no se necesitan para ejecutar |
 
 ## Limitaciones conocidas
 
