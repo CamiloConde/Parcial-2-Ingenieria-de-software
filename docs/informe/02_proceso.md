@@ -1,6 +1,6 @@
 ## 2. Proceso y agilidad
 
-**Proceso elegido: Kanban incremental con dos entregas internas.** El trabajo dura 12 horas en pareja y llega un cambio en la hora 6. Se usa un tablero con flujo continuo, límite de trabajo en curso (WIP = 2, una tarjeta por integrante en "En progreso") y dos versiones etiquetadas en Git: `v1.0` (versión disponible al recibir el cambio) y `v2.0` (versión final).
+**Proceso elegido: Kanban incremental con dos entregas internas.** El trabajo dura 12 horas en pareja y llega un cambio en la hora 6. Se usa un tablero en Trello con flujo continuo, límite de trabajo en curso (WIP = 2, una tarjeta por integrante en "En progreso") y dos versiones etiquetadas en Git: `v1.0` (versión disponible al recibir el cambio) y `v2.0` (versión final).
 
 **Comparación con la alternativa (Scrum).** Scrum organiza el trabajo en sprints de duración fija con planificación, revisión y retrospectiva. En una ventana de 12 horas, un sprint útil ocuparía casi toda la ventana y sus ceremonias consumirían tiempo de construcción; además, el cambio de la hora 6 llega a mitad de cualquier sprint razonable. Kanban permite reordenar el backlog en el momento en que llega la solicitud sin "romper" un compromiso de sprint.
 

@@ -1,46 +1,14 @@
 ## A1. Diagrama de contexto
 
-```mermaid
-flowchart LR
-  ESC(["Escritora / Diseñador"])
-  LEC(["Lector"])
-  COO(["Coordinadora del festival"])
-  SIS[["Motor de historias interactivas<br/>(programa de consola local)"]]
-  ARC[("Archivos de historia<br/>historias/*.json")]
-  ESC -- "escribe y edita" --> ARC
-  ESC -- "valida archivo (--validar)" --> SIS
-  LEC -- "elige opciones, deshace, reinicia" --> SIS
-  COO -- "ejecuta en el evento" --> SIS
-  SIS -- "lee y valida" --> ARC
-  SIS -- "escena, opciones, desenlace, errores" --> LEC
-  SIS -- "lista de errores con categoría e ID" --> ESC
-```
+![Diagrama de contexto](diagramas/contexto.svg)
+
+*Fuente: `docs/anexo/diagramas/contexto.puml` (PlantUML).*
 
 ## A2. Diagrama de casos de uso
 
-```mermaid
-flowchart LR
-  ESC(("Escritora"))
-  LEC(("Lector"))
-  subgraph S["Sistema: motor de historias"]
-    CU1(["CU01 Validar historia"])
-    CU2(["CU02 Iniciar partida"])
-    CU3(["CU03 Elegir opción"])
-    CU4(["CU04 Reiniciar partida"])
-    CU5(["CU05 Reconocer desenlace"])
-    CU6(["CU06 Deshacer última decisión"])
-    CU7(["CU07 Cargar historia"])
-  end
-  ESC --- CU1
-  LEC --- CU2
-  LEC --- CU3
-  LEC --- CU4
-  LEC --- CU5
-  LEC --- CU6
-  CU2 -. "«include»" .-> CU7
-  CU7 -. "«include»" .-> CU1
-  CU5 -. "«extend»" .-> CU3
-```
+![Diagrama de casos de uso](diagramas/casos_de_uso.svg)
+
+*Fuente: `docs/anexo/diagramas/casos_de_uso.puml` (PlantUML). La Coordinadora del festival no tiene casos de uso propios: opera el programa (diagrama de contexto).*
 
 | Caso de uso | RF relacionados |
 |---|---|

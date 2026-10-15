@@ -1,0 +1,29 @@
+@startuml contexto
+left to right direction
+skinparam actorStyle stick
+skinparam shadowing false
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 13
+skinparam rectangle {
+  BackgroundColor #F2F2F2
+  BorderColor #333333
+}
+skinparam database {
+  BackgroundColor #FFFFFF
+  BorderColor #333333
+}
+
+actor "Lector" as LEC
+actor "Coordinadora\ndel festival" as COO
+rectangle "<<sistema>>\nMotor de historias interactivas\n(programa de consola local)" as SIS
+database "Archivos de historia\nhistorias/*.json" as ARC
+actor "Escritora /\nDiseñador" as ESC
+
+LEC --> SIS : elige opciones,\ndeshace, reinicia
+COO --> SIS : ejecuta en el evento
+SIS --> LEC : escena, opciones,\ndesenlace
+SIS --> ARC : lee y valida
+ESC --> ARC : escribe y edita
+ESC --> SIS : valida archivo\n(--validar)
+SIS --> ESC : errores con\ncategoría e ID
+@enduml

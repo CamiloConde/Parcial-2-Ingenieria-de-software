@@ -16,12 +16,12 @@ flowchart LR
 
 ## A9. Tablero Kanban: capturas inicial y final
 
-Tablero en GitHub Projects con las columnas *Backlog → Por hacer → En progreso (WIP 2) → Revisión → Hecho* y las tarjetas B01-B14 de la sección 2 del informe, cada una con su responsable.
+Tablero en **Trello** con las columnas *Backlog → Por hacer → En progreso (WIP 2) → Revisión → Hecho* y las tarjetas B01-B14 de la sección 2 del informe. El responsable se indica con la etiqueta de color de cada tarjeta: **azul = Camilo Conde**, **verde = Miguel Jacome**, **naranja = ambos**.
 
-**Captura inicial** (inicio del parcial, todas las tarjetas en *Backlog* o *Por hacer*):
+**Captura inicial** (al comenzar el trabajo: B02 y B03 en curso, respetando el límite WIP de 2; sin las tarjetas del cambio):
 
 ![Tablero inicial](../../evidencias/capturas/tablero_inicial.png)
 
-**Captura final** (cierre, tarjetas en *Hecho*; B12 y B13 agregadas al recibir la solicitud de cambio):
+**Captura final** (cierre: las 14 tarjetas en *Hecho*; B12 y B13 se agregaron al recibir la solicitud de cambio):
 
 ![Tablero final](../../evidencias/capturas/tablero_final.png)

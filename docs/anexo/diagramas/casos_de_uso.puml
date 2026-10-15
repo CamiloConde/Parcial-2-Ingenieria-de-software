@@ -1,0 +1,36 @@
+@startuml casos_de_uso
+left to right direction
+skinparam actorStyle stick
+skinparam shadowing false
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 13
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #333333
+}
+skinparam rectangle {
+  BorderColor #333333
+}
+
+actor "Escritora /\nDiseñador" as ESC
+actor "Lector" as LEC
+
+rectangle "Motor de historias interactivas" {
+  usecase "CU02\nIniciar partida" as CU2
+  usecase "CU07\nCargar historia" as CU7
+  usecase "CU01\nValidar historia" as CU1
+  usecase "CU03\nElegir opción" as CU3
+  usecase "CU05\nReconocer desenlace" as CU5
+  usecase "CU04\nReiniciar partida" as CU4
+  usecase "CU06\nDeshacer última decisión\n(SC01)" as CU6
+}
+
+LEC -- CU2
+LEC -- CU3
+LEC -- CU4
+LEC -- CU6
+CU2 ..> CU7 : <<include>>
+CU7 ..> CU1 : <<include>>
+CU5 .> CU3 : <<extend>>
+CU1 -- ESC
+@enduml
