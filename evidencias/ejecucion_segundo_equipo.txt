@@ -1,0 +1,116 @@
+Ejecución en un segundo equipo (usuario Git: Miguel Jacome)
+Fecha: 2026-10-14 19:50 Hora est. Pacífico, Sudamérica
+Commit: 7c7837a
+Python: 3.12.10  Sistema: Windows
+Comando: python -m pytest -v  y  python scripts/verificar_rnf.py
+
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.1, pluggy-1.6.0 -- AppData\Local\Programs\Python\Python312\python.exe
+rootdir: Parcial-2-Ingenieria-de-software
+configfile: pytest.ini
+testpaths: tests
+collecting ... collected 70 items
+
+tests/test_cambio_deshacer.py::test_u6_deshacer_restaura_y_consume_el_retroceso PASSED [  1%]
+tests/test_cambio_deshacer.py::test_u6_al_comenzar_no_hay_retroceso PASSED [  2%]
+tests/test_cambio_deshacer.py::test_u6_variante_entrada_invalida_preserva_el_historial[no_habilitada] PASSED [  4%]
+tests/test_cambio_deshacer.py::test_u6_variante_entrada_invalida_preserva_el_historial[inexistente] PASSED [  5%]
+tests/test_cambio_deshacer.py::test_u6_variante_entrada_invalida_preserva_el_historial[de_otra_escena] PASSED [  7%]
+tests/test_cambio_deshacer.py::test_u6_variante_entrada_invalida_preserva_el_historial[vacia] PASSED [  8%]
+tests/test_cambio_deshacer.py::test_u6_variante_nueva_eleccion_vuelve_a_habilitar_el_retroceso PASSED [ 10%]
+tests/test_cambio_deshacer.py::test_u6_variante_solo_un_nivel PASSED     [ 11%]
+tests/test_cambio_deshacer.py::test_u6_variante_efecto_que_no_cambia_el_valor_se_restaura_exactamente PASSED [ 12%]
+tests/test_i1_integracion.py::test_i1_archivo_real_hasta_cada_final[E4_rescate] PASSED [ 14%]
+tests/test_i1_integracion.py::test_i1_archivo_real_hasta_cada_final[E5_eco] PASSED [ 15%]
+tests/test_i1_integracion.py::test_i1_archivo_real_hasta_cada_final[E6_silencio] PASSED [ 17%]
+tests/test_i1_integracion.py::test_i1_deshacer_desde_un_final_tras_cargar_el_archivo[E4_rescate] PASSED [ 18%]
+tests/test_i1_integracion.py::test_i1_deshacer_desde_un_final_tras_cargar_el_archivo[E5_eco] PASSED [ 20%]
+tests/test_i1_integracion.py::test_i1_deshacer_desde_un_final_tras_cargar_el_archivo[E6_silencio] PASSED [ 21%]
+tests/test_i1_integracion.py::test_i1_consola_completa_con_entradas_invalidas_reinicio_y_final PASSED [ 22%]
+tests/test_i1_integracion.py::test_i1_consola_deshacer_desde_un_final PASSED [ 24%]
+tests/test_motor.py::test_u1_condiciones_habilitan_solo_opciones_correspondientes[conoce_origen_verdadero] PASSED [ 25%]
+tests/test_motor.py::test_u1_condiciones_habilitan_solo_opciones_correspondientes[conoce_origen_falso] PASSED [ 27%]
+tests/test_motor.py::test_u1_evaluacion_de_condiciones[condiciones0-variables0-True] PASSED [ 28%]
+tests/test_motor.py::test_u1_evaluacion_de_condiciones[condiciones1-variables1-True] PASSED [ 30%]
+tests/test_motor.py::test_u1_evaluacion_de_condiciones[condiciones2-variables2-False] PASSED [ 31%]
+tests/test_motor.py::test_u1_evaluacion_de_condiciones[condiciones3-variables3-True] PASSED [ 32%]
+tests/test_motor.py::test_u1_evaluacion_de_condiciones[condiciones4-variables4-False] PASSED [ 34%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino0-E2-variables_esperadas0] PASSED [ 35%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino1-E3-variables_esperadas1] PASSED [ 37%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino2-E3-variables_esperadas2] PASSED [ 38%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino3-E4-variables_esperadas3] PASSED [ 40%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino4-E5-variables_esperadas4] PASSED [ 41%]
+tests/test_motor.py::test_u2_eleccion_valida_aplica_efectos_y_avanza[camino5-E6-variables_esperadas5] PASSED [ 42%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[inexistente] PASSED [ 44%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[de_otra_escena] PASSED [ 45%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[CA02_no_habilitada] PASSED [ 47%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[no_habilitada_inversa] PASSED [ 48%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[en_final] PASSED [ 50%]
+tests/test_motor.py::test_u3_opcion_invalida_deja_intacto_el_estado[vacia] PASSED [ 51%]
+tests/test_motor.py::test_u3_modificar_la_copia_de_variables_no_altera_la_sesion PASSED [ 52%]
+tests/test_motor.py::test_u5_reiniciar_restaura_escena_y_variables_iniciales[inicio] PASSED [ 54%]
+tests/test_motor.py::test_u5_reiniciar_restaura_escena_y_variables_iniciales[E2] PASSED [ 55%]
+tests/test_motor.py::test_u5_reiniciar_restaura_escena_y_variables_iniciales[E3] PASSED [ 57%]
+tests/test_motor.py::test_u5_reiniciar_restaura_escena_y_variables_iniciales[final_E4] PASSED [ 58%]
+tests/test_motor.py::test_u5_reiniciar_restaura_escena_y_variables_iniciales[final_E5] PASSED [ 60%]
+tests/test_motor.py::test_u5_reiniciar_elimina_historial[camino0] PASSED [ 61%]
+tests/test_motor.py::test_u5_reiniciar_elimina_historial[camino1] PASSED [ 62%]
+tests/test_motor.py::test_u5_reiniciar_elimina_historial[camino2] PASSED [ 64%]
+tests/test_motor.py::test_bloqueo_en_partida_se_detecta_y_reiniciar_lo_resuelve PASSED [ 65%]
+tests/test_rnf.py::test_rnf01_historias_nuevas_sin_modificar_el_codigo PASSED [ 67%]
+tests/test_rnf.py::test_rnf02_todos_los_errores_de_contenido_son_claros PASSED [ 68%]
+tests/test_rnf.py::test_rnf03_mil_entradas_aleatorias_sin_fallos_ni_alteraciones PASSED [ 70%]
+tests/test_rnf.py::test_rnf03_regresion_digitos_unicode_no_cierran_la_consola PASSED [ 71%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[archivo_ilegible.json] PASSED [ 72%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[estructura_incorrecta.json] PASSED [ 74%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[campo_faltante.json] PASSED [ 75%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[inicio_inexistente.json] PASSED [ 77%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[escena_duplicada.json] PASSED [ 78%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[opcion_duplicada.json] PASSED [ 80%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[destino_inexistente.json] PASSED [ 81%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[variable_no_declarada.json] PASSED [ 82%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[valor_no_booleano.json] PASSED [ 84%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[final_con_opciones.json] PASSED [ 85%]
+tests/test_u4_validacion.py::test_u4_archivo_invalido_se_rechaza_con_categoria_y_ubicacion[no_final_sin_opciones.json] PASSED [ 87%]
+tests/test_u4_validacion.py::test_u4_archivo_inexistente PASSED          [ 88%]
+tests/test_u4_validacion.py::test_u4_archivo_no_utf8 PASSED              [ 90%]
+tests/test_u4_validacion.py::test_u4_variantes_en_memoria[raiz_no_objeto] PASSED [ 91%]
+tests/test_u4_validacion.py::test_u4_variantes_en_memoria[falta_inicio] PASSED [ 92%]
+tests/test_u4_validacion.py::test_u4_variantes_en_memoria[sin_escenas] PASSED [ 94%]
+tests/test_u4_validacion.py::test_u4_variantes_en_memoria[variable_inicial_no_booleana] PASSED [ 95%]
+tests/test_u4_validacion.py::test_u4_variantes_en_memoria[titulo_no_texto] PASSED [ 97%]
+tests/test_u4_validacion.py::test_u4_se_acumulan_todos_los_problemas PASSED [ 98%]
+tests/test_u4_validacion.py::test_u4_historia_de_referencia_es_valida PASSED [100%]
+
+============================= 70 passed in 0.97s ==============================
+
+======================================================================
+
+RNF01 Modificabilidad del contenido
+  segunda_historia_finales_declarados: ['F3', 'F4']
+  segunda_historia_finales_alcanzados: ['F3', 'F4']
+  escena_E7_agregada_jugable: True
+  hash_codigo_antes: bcf52e9cd7a35ec0f3aac21aaecdb17c9692ba0cac5c3de1325b5e1c29e7e1b8
+  hash_codigo_despues: bcf52e9cd7a35ec0f3aac21aaecdb17c9692ba0cac5c3de1325b5e1c29e7e1b8
+  lineas_de_codigo_modificadas: 0
+  cumple: True
+
+RNF02 Claridad de errores
+  OK  archivo_ilegible.json          código=1  - [ARCHIVO_ILEGIBLE] JSON mal formado: Expecting property name enclosed in double quotes (línea 4, columna 42). (en Parcial-2-Ingenieria-de-software\historias\invalidas\archivo_ilegible.json)
+  OK  campo_faltante.json            código=1  - [CAMPO_FALTANTE] Falta el campo obligatorio 'texto'. (en escenas[E2])
+  OK  destino_inexistente.json       código=1  - [DESTINO_INEXISTENTE] El destino 'E99' no corresponde a ninguna escena. (en escenas[E3].opciones[cortar].destino)
+  OK  escena_duplicada.json          código=1  - [ESCENA_DUPLICADA] El ID de escena 'E2' está repetido. (en escenas[E2])
+  OK  estructura_incorrecta.json     código=1  - [ESTRUCTURA_INCORRECTA] El campo 'escenas' debe ser lista […]; se encontró {'E1': {'id': 'E1', 'texto': 'Son las 02:13. Una voz pide a…. (en escenas)
+  OK  final_con_opciones.json        código=1  - [FINAL_CON_OPCIONES] Una escena final debe tener 0 opciones; tiene 1. (en escenas[E6])
+  OK  inicio_inexistente.json        código=1  - [INICIO_INEXISTENTE] La escena inicial 'E0' no existe en 'escenas'. (en inicio)
+  OK  no_final_sin_opciones.json     código=1  - [NO_FINAL_SIN_OPCIONES] Una escena no final debe tener al menos una opción. (en escenas[E2])
+  OK  opcion_duplicada.json          código=1  - [OPCION_DUPLICADA] El ID de opción 'investigar' está repetido dentro de la escena. (en escenas[E2].opciones[investigar])
+  OK  valor_no_booleano.json         código=1  - [VALOR_NO_BOOLEANO] El valor de 'conoce_origen' en efectos debe ser true o false; se encontró 'si'. (en escenas[E2].opciones[investigar].efectos.conoce_origen)
+  OK  variable_no_declarada.json     código=1  - [VARIABLE_NO_DECLARADA] La variable 'conoce_origin' usada en condiciones no está declarada en 'variables'. (en escenas[E3].opciones[activar_codigo].condiciones.conoce_origin)
+  resultado: 11/11 = 100 %  cumple: True
+
+RNF03 Confiabilidad ante entradas inválidas
+  {"historia": "la_ultima_transmision.json", "semilla": 2026, "entradas": 1000, "aceptadas": 129, "rechazadas": 871, "excepciones_no_controladas": 0, "rechazadas_que_alteraron_estado": 0, "cumple": true}
+  {"historia": "el_faro.json", "semilla": 2026, "entradas": 1000, "aceptadas": 145, "rechazadas": 855, "excepciones_no_controladas": 0, "rechazadas_que_alteraron_estado": 0, "cumple": true}
+
+RESULTADO GLOBAL: CUMPLE
