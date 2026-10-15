@@ -15,7 +15,7 @@ Parcial práctico de Ingeniería de Software. El programa de consola interpreta 
 |---|---|
 | Informe (8 páginas como máximo) | `docs/Informe.pdf` |
 | Anexo: diagramas, matriz de trazabilidad y tablero | `docs/Anexo.pdf` |
-| Video de demostración (MP4, 6 minutos como máximo) | **ENLACE_VIDEO_PENDIENTE** |
+| Video de demostración (MP4, 6 minutos como máximo) | https://youtu.be/ZnzdL3C8orQ |
 | Guion del video | `docs/guion_demostracion.md` |
 | Comprobación manual paso a paso | `docs/verificacion_manual.md` |
 | Resultados de pruebas, RNF, recorridos e historial de Git | `evidencias/` |

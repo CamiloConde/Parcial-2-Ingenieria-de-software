@@ -7,4 +7,4 @@
 | Camilo Conde Corrales | T00078909 |
 | Miguel Jacome y Yanez | T00078937 |
 
-**Versiones:** `v1.0` (previa a la solicitud de cambio) y `v2.0` (final). **Repositorio:** código, datos, pruebas y evidencias incluidos en el ZIP. Instrucciones de ejecución en `README.md`.
+**Versiones:** `v1.0` (previa a la solicitud de cambio) y `v2.0` (final). **Repositorio:** código, datos, pruebas y evidencias incluidos en el ZIP. Instrucciones de ejecución en `README.md`. **Video de demostración:** https://youtu.be/ZnzdL3C8orQ
