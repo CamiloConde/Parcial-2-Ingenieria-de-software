@@ -1,5 +1,5 @@
-Fecha: 2026-10-15 01:58 UTC
-Commit: 7531cbb
+Fecha: 2026-10-15 17:06 UTC
+Commit: d475a54
 Python: 3.13.16  Sistema: Linux
 Comando: git log
 
@@ -10,10 +10,13 @@ v1.0            Versión previa a la solicitud de cambio (hora 6): sin retroceso
 v2.0            Versión posterior a la solicitud de cambio SC01: deshacer la última decisión
 
 HISTORIAL (hash | fecha | autor | mensaje)
-7531cbb | 2026-10-14 20:58:37 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Verificación manual paso a paso, .mailmap de autores y aportes actualizados (HEAD -> main)
+d475a54 | 2026-10-15 12:06:02 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Agrega el enlace del video de demostración (HEAD -> main)
+2fd93c4 | 2026-10-14 20:59:46 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Entrega: ZIP generado (pendiente enlace del video) (origin/main)
+6c2fec3 | 2026-10-14 20:59:46 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Evidencias regeneradas; informe y anexo actualizados con diagramas UML y tablero
+7531cbb | 2026-10-14 20:58:37 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Verificación manual paso a paso, .mailmap de autores y aportes actualizados
 8504647 | 2026-10-14 20:58:37 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Anexo: casos de uso y contexto en notación UML con PlantUML; capturas del tablero en Trello
 cad596a | 2026-10-14 20:58:37 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Corrige RF09 y RF14 tras la segunda revisión (defecto D2) y completa el análisis de impacto
-072714a | 2026-10-14 19:51:52 (hora de Colombia) | Miguel Jacome <miguel.yj10@gmail.com> | Ejecución en segundo equipo: pruebas y RNF (origin/main)
+072714a | 2026-10-14 19:51:52 (hora de Colombia) | Miguel Jacome <miguel.yj10@gmail.com> | Ejecución en segundo equipo: pruebas y RNF
 efd0183 | 2026-10-14 19:48:28 (hora de Colombia) | Miguel Jacome <miguel.yj10@gmail.com> | Ajusta redacción de El faro de Punta Gris
 04058d3 | 2026-10-14 19:45:11 (hora de Colombia) | Miguel Jacome <miguel.yj10@gmail.com> | Revisión cruzada de requisitos RF01-RF17
 7c7837a | 2026-10-14 17:48:15 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Opción --segundo-equipo para registrar la ejecución en otro equipo
@@ -34,6 +37,40 @@ bf6973a | 2026-10-14 17:34:33 (hora de Colombia) | Camilo Conde <camilandre0510@
 fd71a4a | 2026-10-14 17:33:43 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Estructura inicial: historia de referencia, alcance, riesgos y proceso
 
 DETALLE DE ARCHIVOS POR COMMIT (git log --stat)
+
+d475a54 2026-10-15 12:06 Camilo Conde
+    Agrega el enlace del video de demostración
+
+ README.md                         | 2 +-
+ docs/informe/00_identificacion.md | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+2fd93c4 2026-10-14 20:59 Camilo Conde
+    Entrega: ZIP generado (pendiente enlace del video)
+
+ entrega/Parcial_CondeCamilo_JacomeMiguel.zip | Bin 0 -> 2443491 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+6c2fec3 2026-10-14 20:59 Camilo Conde
+    Evidencias regeneradas; informe y anexo actualizados con diagramas UML y tablero
+
+ docs/Anexo.pdf                                     | Bin 161521 -> 1206279 bytes
+ docs/Informe.pdf                                   | Bin 140419 -> 143464 bytes
+ docs/anexo/A8_mapa_y_tablero.md                    |   4 +
+ evidencias/historial_git.txt                       | 159 +++++++++++++++++----
+ evidencias/recorridos/bloqueo.txt                  |   4 +-
+ .../recorridos/condicion_cambia_opciones.txt       |   4 +-
+ evidencias/recorridos/deshacer.txt                 |   4 +-
+ evidencias/recorridos/entradas_invalidas.txt       |   4 +-
+ evidencias/recorridos/error_destino_E99.txt        |   4 +-
+ evidencias/recorridos/final_E4.txt                 |   4 +-
+ evidencias/recorridos/final_E5.txt                 |   4 +-
+ evidencias/recorridos/final_E6.txt                 |   4 +-
+ evidencias/recorridos/reinicio.txt                 |   4 +-
+ evidencias/recorridos/segunda_historia.txt         |  38 ++---
+ evidencias/registro_pruebas.txt                    |   6 +-
+ evidencias/rnf_resultados.txt                      |   4 +-
+ 16 files changed, 177 insertions(+), 70 deletions(-)
 
 7531cbb 2026-10-14 20:58 Camilo Conde
     Verificación manual paso a paso, .mailmap de autores y aportes actualizados

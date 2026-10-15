@@ -1,5 +1,5 @@
-Fecha: 2026-10-15 01:58 UTC
-Commit: 7531cbb
+Fecha: 2026-10-15 17:06 UTC
+Commit: d475a54
 Python: 3.13.16  Sistema: Linux
 Comando: python -m pytest -v
 
@@ -82,4 +82,4 @@ tests/test_u4_validacion.py::test_u4_variantes_en_memoria[titulo_no_texto] PASSE
 tests/test_u4_validacion.py::test_u4_se_acumulan_todos_los_problemas PASSED [ 98%]
 tests/test_u4_validacion.py::test_u4_historia_de_referencia_es_valida PASSED [100%]
 
-============================== 70 passed in 0.86s ==============================
+============================== 70 passed in 1.11s ==============================

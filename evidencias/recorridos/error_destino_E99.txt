@@ -1,5 +1,5 @@
-Fecha: 2026-10-15 01:58 UTC
-Commit: 7531cbb
+Fecha: 2026-10-15 17:06 UTC
+Commit: d475a54
 Python: 3.13.16  Sistema: Linux
 Comando: python jugar.py --validar historias/invalidas/destino_inexistente.json
 
