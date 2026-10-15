@@ -14,7 +14,7 @@
 
 | Artefacto | Impacto | Cambio realizado |
 |---|---|---|
-| Requisitos | Alto | Se agregan N07, RF15-RF17. P1 pasa de "acuerdo provisional" a "respondida por SC01". RF06 y RF10 no cambian su texto, pero su aceptación ahora también cubre el historial. |
+| Requisitos | Alto | Se agregan N07, RF15-RF17. P1 pasa de "acuerdo provisional" a "respondida por SC01". RF06 y RF10 no cambian su texto, pero su aceptación ahora también cubre el historial. Los criterios de RF09 y RF14 se actualizaron porque en un final o en un bloqueo ahora también se ofrece deshacer (defecto D2, detectado en la revisión cruzada). |
 | Casos de uso (A2) | Medio | Nuevo CU06 *Deshacer última decisión*. |
 | Clases (A3) | Medio | `Sesion` agrega `_anterior: EstadoSesion \| None`, `puede_deshacer` y `deshacer()`. Nueva clase `EstadoSesion` (instantánea inmutable). |
 | Secuencia (A4) | Bajo | `elegir` guarda la instantánea antes de aplicar los efectos. |

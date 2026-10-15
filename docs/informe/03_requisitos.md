@@ -14,12 +14,12 @@ Cada RF describe un comportamiento observable y su criterio de aceptación (CA).
 | RF06 | N03 | Si se solicita una opción inexistente o no habilitada, el motor la rechaza, informa el motivo y no modifica escena ni variables. | En `E3` sin conocer el origen, enviar `activar_codigo` directamente al motor devuelve rechazo y la sesión sigue en `E3` con las mismas variables (CA02). |
 | RF07 | N03 | La interfaz rechaza entradas no reconocidas (texto libre, número fuera de rango, vacío) con un mensaje y sin modificar la partida. | En `E1`, escribir `9` muestra "Entrada no válida…"; escribir `abc` muestra "La opción 'abc' no existe en esta escena"; en ambos casos la sesión sigue en `E1` con las mismas variables. |
 | RF08 | N04 | Los valores de las variables se conservan durante toda la partida y las condiciones posteriores se evalúan con ellos. | Tras `revisar` → `investigar`, en `E3` aparece "Activar con código" y no "Activar sin verificar". |
-| RF09 | N05 | Cuando la escena actual es final, el sistema muestra su texto, la indica como desenlace y no ofrece opciones de avance. | Al llegar a `E6` se muestra "FIN" con el texto de `E6` y solo los comandos reiniciar y salir. |
+| RF09 | N05 | Cuando la escena actual es final, el sistema muestra su texto, la indica como desenlace y no ofrece opciones de avance. | Al llegar a `E6` se muestra "FIN" con el texto de `E6`, ninguna opción de avance y solo los comandos deshacer (si hay una elección previa, RF15), reiniciar y salir. |
 | RF10 | N05 | El lector puede reiniciar en cualquier momento; la sesión vuelve a la escena inicial y a los valores iniciales de todas las variables. | Tras llegar a `E4`, reiniciar deja la sesión en `E1` con todas las variables en falso (U5). |
 | RF11 | N06 | El sistema valida el archivo completo antes de abrir una sesión; si existe algún error, no se abre una sesión jugable. | Una copia con destino `E99` se rechaza y no se muestra ninguna escena (CA03). |
 | RF12 | N06 | Cada error de contenido se informa con su categoría, la causa y el campo o ID involucrado. | El error de CA03 indica `[DESTINO_INEXISTENTE]`, la escena, la opción y el valor `E99`. |
 | RF13 | N06 | El escritor puede validar un archivo sin jugarlo mediante `--validar`; el programa termina con código 0 si es válido y 1 si no lo es. | `python jugar.py --validar historias/invalidas/destino_inexistente.json` lista el error y termina con código 1. |
-| RF14 | N06 | Si durante una partida una escena no final no tiene opciones habilitadas, el sistema informa el bloqueo y permite reiniciar o salir. | Con `historias/invalidas/bloqueo_en_partida.json`, al llegar a la escena bloqueada se muestra "BLOQUEO" y reiniciar vuelve al inicio. |
+| RF14 | N06 | Si durante una partida una escena no final no tiene opciones habilitadas, el sistema informa el bloqueo y permite reiniciar o salir. | Con `historias/invalidas/bloqueo_en_partida.json`, al llegar a la escena bloqueada se muestra "BLOQUEO", no se ofrecen opciones, y reiniciar vuelve al inicio (deshacer también está disponible desde SC01). |
 
 ### 3.2 Requisitos no funcionales medibles
 
@@ -37,12 +37,13 @@ Cada RF describe un comportamiento observable y su criterio de aceptación (CA).
 | P2 | ¿Las opciones cuyas condiciones no se cumplen deben verse deshabilitadas o no deben verse? | **Supuesto:** no se muestran (N02: "ver únicamente decisiones compatibles"; CA01 exige ver exactamente dos opciones en `E3`). |
 | P3 | ¿El lector debe ver los valores de las variables durante la partida? | **Supuesto:** no; revelaría la lógica del relato. Para pruebas y demostración existe la opción `--depurar`, que muestra el estado. |
 
-### 3.4 Revisión cruzada: defecto detectado y corrección
+### 3.4 Revisión cruzada: defectos detectados y corrección
 
 Los requisitos se revisaron entre integrantes contra N01-N06 y CA01-CA03 antes de implementar el motor.
 
 | Defecto | Hallazgo | Corrección |
 |---|---|---|
 | D1 (ambigüedad / contradicción) | La primera redacción de RF04 decía "muestra las opciones de la escena actual **e indica cuáles están disponibles**". Admitía mostrar también las opciones no habilitadas (por ejemplo, en gris), lo que contradice N02 ("ver **únicamente** decisiones compatibles") y CA01, que exige ver **exactamente dos** opciones en `E3`. Además su criterio de aceptación no permitía comprobar que la opción no habilitada quedara oculta. | RF04 se reescribió como "muestra **únicamente** las opciones cuyas condiciones se cumplen todas" y su criterio ahora verifica los dos casos de `E3` con conjuntos exactos. Se alineó con el supuesto P2. Cambio visible en el historial de Git (commit "Corrige RF04 tras revisión cruzada de requisitos"). |
+| D2 (inconsistencia tras el cambio) | En la segunda revisión (Miguel Jacome, después de SC01) se detectó que los criterios de RF09 ("solo los comandos reiniciar y salir" en `E6`) y RF14 quedaron desactualizados: desde SC01 la interfaz también ofrece `d = deshacer` en un final o en un bloqueo. El análisis de impacto de la sección 7 no los mencionaba. | Se actualizaron los criterios de RF09 y RF14 y se agregaron ambos al análisis de impacto (sección 7). Commits "Revisión cruzada de requisitos RF01-RF17" (hallazgo) y "Corrige RF09 y RF14 tras la segunda revisión" (corrección). |
 
 **Registro de la revisión.** Revisor: Miguel Jacome y Yanez. Se comprobó que RF01-RF17 tienen necesidad asociada, comportamiento observable y criterio de aceptación verificable. Resultado: se detectó D1 (corregido); no se encontraron otros defectos bloqueantes. Observación adicional: el criterio de aceptación de RF09 ("solo los comandos reiniciar y salir" en E6) quedó desactualizado tras SC01, porque RF15 permite deshacer desde un final y la interfaz ahora también ofrece "d = deshacer"; lo mismo aplica a RF14 en la escena bloqueada. El análisis de impacto de la sección 7 menciona RF06 y RF10, pero no RF09 ni RF14. Se recomienda actualizar ambos criterios.
