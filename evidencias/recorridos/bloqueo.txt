@@ -1,5 +1,5 @@
-Fecha: 2026-10-14 22:43 UTC
-Commit: 9c91f19
+Fecha: 2026-10-15 01:58 UTC
+Commit: 7531cbb
 Python: 3.13.16  Sistema: Linux
 Comando: python jugar.py historias/pruebas/bloqueo_en_partida.json --depurar   (entradas: 1, 2, 1, r, s)
 

@@ -1,5 +1,5 @@
-Fecha: 2026-10-14 22:43 UTC
-Commit: 9c91f19
+Fecha: 2026-10-15 01:58 UTC
+Commit: 7531cbb
 Python: 3.13.16  Sistema: Linux
 Comando: python jugar.py historias/el_faro.json --depurar   (entradas: 1, 1, r, 2, 1, s)
 
@@ -7,25 +7,25 @@ Comando: python jugar.py historias/el_faro.json --depurar   (entradas: 1, 1, r, 
   El faro de Punta Gris
 ============================================================
 
-[F1] Una tormenta apagó el faro de Punta Gris y un barco pesquero se acerca a las rocas. El guardián llega al acantilado empapado.
+[F1] Un rayo apagó el faro de Punta Gris y, entre olas que revientan contra el acantilado, las luces de un pesquero avanzan a ciegas hacia las rocas. El guardián llega empapado, con el viento arrancándole la capucha, y sabe que solo tiene unos minutos.
     (estado: tiene_llave=falso)
 
-  1. Buscar en el cobertizo
-  2. Correr directo al faro
+  1. Revisar el cobertizo de herramientas
+  2. Subir corriendo hacia el faro
 Comandos: número de opción · r = reiniciar · s = salir
 > 1
-Elegiste: Buscar en el cobertizo
+Elegiste: Revisar el cobertizo de herramientas
 
-[F2] La puerta de hierro del faro está cerrada. Las luces del barco se ven cada vez más cerca.
+[F2] La puerta de hierro del faro está cerrada con candado y el óxido cruje bajo sus manos. Abajo, las luces del barco ya se ven tan cerca que puede distinguir las siluetas en la cubierta.
     (estado: tiene_llave=verdadero)
 
-  1. Abrir con la llave del cobertizo
-  2. Esperar a que pase la tormenta
+  1. Abrir el candado con la llave oxidada
+  2. Refugiarse en el portal y esperar a que amaine
 Comandos: número de opción · d = deshacer · r = reiniciar · s = salir
 > 1
-Elegiste: Abrir con la llave del cobertizo
+Elegiste: Abrir el candado con la llave oxidada
 
-[F3] La lámpara vuelve a girar. El barco corrige el rumbo y entra al puerto sin daños.
+[F3] El candado cede, el guardián sube los escalones de dos en dos y la gran lámpara vuelve a girar sobre la tormenta. El pesquero vira justo a tiempo y entra al puerto sin un rasguño, saludando con la bocina.
     (estado: tiene_llave=verdadero)
 
 *** FIN — desenlace F3 ***
@@ -33,24 +33,24 @@ Comandos: d = deshacer · r = reiniciar · s = salir
 > r
 Partida reiniciada.
 
-[F1] Una tormenta apagó el faro de Punta Gris y un barco pesquero se acerca a las rocas. El guardián llega al acantilado empapado.
+[F1] Un rayo apagó el faro de Punta Gris y, entre olas que revientan contra el acantilado, las luces de un pesquero avanzan a ciegas hacia las rocas. El guardián llega empapado, con el viento arrancándole la capucha, y sabe que solo tiene unos minutos.
     (estado: tiene_llave=falso)
 
-  1. Buscar en el cobertizo
-  2. Correr directo al faro
+  1. Revisar el cobertizo de herramientas
+  2. Subir corriendo hacia el faro
 Comandos: número de opción · r = reiniciar · s = salir
 > 2
-Elegiste: Correr directo al faro
+Elegiste: Subir corriendo hacia el faro
 
-[F2] La puerta de hierro del faro está cerrada. Las luces del barco se ven cada vez más cerca.
+[F2] La puerta de hierro del faro está cerrada con candado y el óxido cruje bajo sus manos. Abajo, las luces del barco ya se ven tan cerca que puede distinguir las siluetas en la cubierta.
     (estado: tiene_llave=falso)
 
-  1. Esperar a que pase la tormenta
+  1. Refugiarse en el portal y esperar a que amaine
 Comandos: número de opción · d = deshacer · r = reiniciar · s = salir
 > 1
-Elegiste: Esperar a que pase la tormenta
+Elegiste: Refugiarse en el portal y esperar a que amaine
 
-[F4] Amanece. El barco encalló en la arena, pero la tripulación llegó a la orilla a nado.
+[F4] El amanecer encuentra el mar en calma y el pesquero encallado en la arena, con el casco abierto. La tripulación alcanzó la orilla a nado, agotada pero viva, y nadie en Punta Gris olvidará la noche en que el faro se quedó a oscuras.
     (estado: tiene_llave=falso)
 
 *** FIN — desenlace F4 ***

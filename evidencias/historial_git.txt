@@ -1,30 +1,133 @@
-Fecha: 2026-10-14 22:43 UTC
-Commit: 9c91f19
+Fecha: 2026-10-15 01:58 UTC
+Commit: 7531cbb
 Python: 3.13.16  Sistema: Linux
 Comando: git log
+
+Autores unificados con .mailmap (un integrante hizo commits con más de una configuración de Git).
 
 VERSIONES (tags)
 v1.0            Versión previa a la solicitud de cambio (hora 6): sin retroceso
 v2.0            Versión posterior a la solicitud de cambio SC01: deshacer la última decisión
 
 HISTORIAL (hash | fecha | autor | mensaje)
-9c91f19 | 2026-10-14 22:43:09 +0000 | Camilo Conde <camilandre0510@gmail.com> | SC01: actualiza modelos, arquitectura, README y matriz de trazabilidad (HEAD -> main, tag: v2.0)
-6d65c2d | 2026-10-14 22:42:22 +0000 | Camilo Conde <camilandre0510@gmail.com> | SC01: deshacer la última decisión (un nivel) con U6 y extensión de U5 e I1
-e9d23cf | 2026-10-14 22:41:39 +0000 | Camilo Conde <camilandre0510@gmail.com> | Solicitud de cambio SC01: análisis de impacto, RF15-RF17, ADR-03 y backlog replanificado
-d090e6c | 2026-10-14 22:40:55 +0000 | Camilo Conde <camilandre0510@gmail.com> | README: instalación, ejecución, formato de contenido, rutas a los finales y limitaciones (tag: v1.0)
-e0aecbc | 2026-10-14 22:40:08 +0000 | Camilo Conde <camilandre0510@gmail.com> | Verificación de RNF01-RNF03; corrige cierre de la consola con dígitos Unicode hallado por RNF03
-bcabfe2 | 2026-10-14 22:39:02 +0000 | Camilo Conde <camilandre0510@gmail.com> | Segunda historia: El faro de Punta Gris (4 escenas, una condición y un efecto)
-4d4957f | 2026-10-14 22:38:51 +0000 | Camilo Conde <camilandre0510@gmail.com> | Capa de interfaz: consola, punto de entrada jugar.py y prueba de integración I1
-db148cf | 2026-10-14 22:38:01 +0000 | Camilo Conde <camilandre0510@gmail.com> | Capa de reglas: sesión con opciones condicionadas, efectos, reinicio y bloqueo (U1-U3, U5)
-4be5725 | 2026-10-14 22:37:22 +0000 | Camilo Conde <camilandre0510@gmail.com> | Capa de contenido: modelo, cargador y validador con pruebas U4 parametrizadas
-9ddd64c | 2026-10-14 22:35:37 +0000 | Camilo Conde <camilandre0510@gmail.com> | Modelos UML y arquitectura por capas con decisiones ADR-01 y ADR-02
-1f252a7 | 2026-10-14 22:34:42 +0000 | Camilo Conde <camilandre0510@gmail.com> | Corrige RF04 tras revisión cruzada de requisitos
-bf6973a | 2026-10-14 22:34:33 +0000 | Camilo Conde <camilandre0510@gmail.com> | Requisitos funcionales, no funcionales y preguntas al cliente
-fd71a4a | 2026-10-14 22:33:43 +0000 | Camilo Conde <camilandre0510@gmail.com> | Estructura inicial: historia de referencia, alcance, riesgos y proceso
+7531cbb | 2026-10-14 20:58:37 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Verificación manual paso a paso, .mailmap de autores y aportes actualizados (HEAD -> main)
+8504647 | 2026-10-14 20:58:37 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Anexo: casos de uso y contexto en notación UML con PlantUML; capturas del tablero en Trello
+cad596a | 2026-10-14 20:58:37 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Corrige RF09 y RF14 tras la segunda revisión (defecto D2) y completa el análisis de impacto
+072714a | 2026-10-14 19:51:52 (hora de Colombia) | Miguel Jacome <miguel.yj10@gmail.com> | Ejecución en segundo equipo: pruebas y RNF (origin/main)
+efd0183 | 2026-10-14 19:48:28 (hora de Colombia) | Miguel Jacome <miguel.yj10@gmail.com> | Ajusta redacción de El faro de Punta Gris
+04058d3 | 2026-10-14 19:45:11 (hora de Colombia) | Miguel Jacome <miguel.yj10@gmail.com> | Revisión cruzada de requisitos RF01-RF17
+7c7837a | 2026-10-14 17:48:15 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Opción --segundo-equipo para registrar la ejecución en otro equipo
+544e5ae | 2026-10-14 17:46:34 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Informe y anexo en PDF, guion de la demostración y script de empaquetado
+4cefbd2 | 2026-10-14 17:44:38 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Informe: implementación, verificación, aportes, fuentes y aprendizaje; evidencias generadas
+9c91f19 | 2026-10-14 17:43:09 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | SC01: actualiza modelos, arquitectura, README y matriz de trazabilidad (tag: v2.0)
+6d65c2d | 2026-10-14 17:42:22 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | SC01: deshacer la última decisión (un nivel) con U6 y extensión de U5 e I1
+e9d23cf | 2026-10-14 17:41:39 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Solicitud de cambio SC01: análisis de impacto, RF15-RF17, ADR-03 y backlog replanificado
+d090e6c | 2026-10-14 17:40:55 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | README: instalación, ejecución, formato de contenido, rutas a los finales y limitaciones (tag: v1.0)
+e0aecbc | 2026-10-14 17:40:08 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Verificación de RNF01-RNF03; corrige cierre de la consola con dígitos Unicode hallado por RNF03
+bcabfe2 | 2026-10-14 17:39:02 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Segunda historia: El faro de Punta Gris (4 escenas, una condición y un efecto)
+4d4957f | 2026-10-14 17:38:51 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Capa de interfaz: consola, punto de entrada jugar.py y prueba de integración I1
+db148cf | 2026-10-14 17:38:01 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Capa de reglas: sesión con opciones condicionadas, efectos, reinicio y bloqueo (U1-U3, U5)
+4be5725 | 2026-10-14 17:37:22 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Capa de contenido: modelo, cargador y validador con pruebas U4 parametrizadas
+9ddd64c | 2026-10-14 17:35:37 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Modelos UML y arquitectura por capas con decisiones ADR-01 y ADR-02
+1f252a7 | 2026-10-14 17:34:42 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Corrige RF04 tras revisión cruzada de requisitos
+bf6973a | 2026-10-14 17:34:33 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Requisitos funcionales, no funcionales y preguntas al cliente
+fd71a4a | 2026-10-14 17:33:43 (hora de Colombia) | Camilo Conde <camilandre0510@gmail.com> | Estructura inicial: historia de referencia, alcance, riesgos y proceso
 
 DETALLE DE ARCHIVOS POR COMMIT (git log --stat)
 
-9c91f19 2026-10-14 22:43 Camilo Conde
+7531cbb 2026-10-14 20:58 Camilo Conde
+    Verificación manual paso a paso, .mailmap de autores y aportes actualizados
+
+ .mailmap                           |   2 +
+ README.md                          |   4 +-
+ docs/informe/08_verificacion.md    |   2 +-
+ docs/informe/09_aportes_fuentes.md |   8 +--
+ docs/verificacion_manual.md        | 115 +++++++++++++++++++++++++++++++++++++
+ scripts/generar_evidencias.py      |  11 +++-
+ 6 files changed, 133 insertions(+), 9 deletions(-)
+
+8504647 2026-10-14 20:58 Camilo Conde
+    Anexo: casos de uso y contexto en notación UML con PlantUML; capturas del tablero en Trello
+
+ docs/anexo/A1_modelos.md                |  44 +++++---------------------------
+ docs/anexo/A8_mapa_y_tablero.md         |   6 ++---
+ docs/anexo/diagramas/casos_de_uso.puml  |  36 ++++++++++++++++++++++++++
+ docs/anexo/diagramas/casos_de_uso.svg   |   1 +
+ docs/anexo/diagramas/contexto.puml      |  29 +++++++++++++++++++++
+ docs/anexo/diagramas/contexto.svg       |   1 +
+ docs/informe/02_proceso.md              |   2 +-
+ docs/informe/06_implementacion.md       |   2 +-
+ evidencias/capturas/tablero_final.png   | Bin 0 -> 455559 bytes
+ evidencias/capturas/tablero_inicial.png | Bin 0 -> 593895 bytes
+ 10 files changed, 78 insertions(+), 43 deletions(-)
+
+cad596a 2026-10-14 20:58 Camilo Conde
+    Corrige RF09 y RF14 tras la segunda revisión (defecto D2) y completa el análisis de impacto
+
+ docs/informe/03_requisitos.md | 7 ++++---
+ docs/informe/07_cambio.md     | 2 +-
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+
+072714a 2026-10-14 19:51 Miguel Jacome
+    Ejecución en segundo equipo: pruebas y RNF
+
+ evidencias/ejecucion_segundo_equipo.txt | 116 ++++++++++++++++++++++++++++++++
+ 1 file changed, 116 insertions(+)
+
+efd0183 2026-10-14 19:48 Miguel Jacome
+    Ajusta redacción de El faro de Punta Gris
+
+ historias/el_faro.json | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+04058d3 2026-10-14 19:45 Miguel Jacome
+    Revisión cruzada de requisitos RF01-RF17
+
+ docs/informe/03_requisitos.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+7c7837a 2026-10-14 17:48 Camilo Conde
+    Opción --segundo-equipo para registrar la ejecución en otro equipo
+
+ scripts/generar_evidencias.py | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+544e5ae 2026-10-14 17:46 Camilo Conde
+    Informe y anexo en PDF, guion de la demostración y script de empaquetado
+
+ README.md                  |  13 +++++++++++++
+ docs/Anexo.pdf             | Bin 0 -> 161521 bytes
+ docs/Informe.pdf           | Bin 0 -> 140419 bytes
+ docs/anexo/A1_modelos.md   |  15 +++++----------
+ docs/guion_demostracion.md |  14 ++++++++++++++
+ scripts/empaquetar.py      |  36 ++++++++++++++++++++++++++++++++++++
+ 6 files changed, 68 insertions(+), 10 deletions(-)
+
+4cefbd2 2026-10-14 17:44 Camilo Conde
+    Informe: implementación, verificación, aportes, fuentes y aprendizaje; evidencias generadas
+
+ docs/informe/00_identificacion.md                  |  10 ++
+ docs/informe/02_proceso.md                         |   2 +-
+ docs/informe/06_implementacion.md                  |  16 +++
+ docs/informe/08_verificacion.md                    |  29 ++++
+ docs/informe/09_aportes_fuentes.md                 |  14 ++
+ evidencias/historial_git.txt                       | 156 +++++++++++++++++++++
+ evidencias/recorridos/bloqueo.txt                  |  43 ++++++
+ .../recorridos/condicion_cambia_opciones.txt       |  60 ++++++++
+ evidencias/recorridos/deshacer.txt                 |  81 +++++++++++
+ evidencias/recorridos/entradas_invalidas.txt       |  42 ++++++
+ evidencias/recorridos/error_destino_E99.txt        |  10 ++
+ evidencias/recorridos/final_E4.txt                 |  42 ++++++
+ evidencias/recorridos/final_E5.txt                 |  42 ++++++
+ evidencias/recorridos/final_E6.txt                 |  42 ++++++
+ evidencias/recorridos/reinicio.txt                 |  50 +++++++
+ evidencias/recorridos/segunda_historia.txt         |  59 ++++++++
+ evidencias/registro_pruebas.txt                    |  85 +++++++++++
+ evidencias/rnf_resultados.txt                      |  33 +++++
+ scripts/generar_evidencias.py                      | 126 +++++++++++++++++
+ 19 files changed, 941 insertions(+), 1 deletion(-)
+
+9c91f19 2026-10-14 17:43 Camilo Conde
     SC01: actualiza modelos, arquitectura, README y matriz de trazabilidad
 
  README.md                                | 16 ++++++++++++++--
@@ -35,7 +138,7 @@ DETALLE DE ARCHIVOS POR COMMIT (git log --stat)
  docs/informe/04_modelado_arquitectura.md |  4 ++--
  6 files changed, 92 insertions(+), 11 deletions(-)
 
-6d65c2d 2026-10-14 22:42 Camilo Conde
+6d65c2d 2026-10-14 17:42 Camilo Conde
     SC01: deshacer la última decisión (un nivel) con U6 y extensión de U5 e I1
 
  interfaz/consola.py           | 15 ++++++--
@@ -46,7 +149,7 @@ DETALLE DE ARCHIVOS POR COMMIT (git log --stat)
  tests/test_motor.py           | 13 +++++++
  6 files changed, 170 insertions(+), 8 deletions(-)
 
-e9d23cf 2026-10-14 22:41 Camilo Conde
+e9d23cf 2026-10-14 17:41 Camilo Conde
     Solicitud de cambio SC01: análisis de impacto, RF15-RF17, ADR-03 y backlog replanificado
 
  docs/informe/01_fundamentos.md       |  2 +-
@@ -56,7 +159,7 @@ e9d23cf 2026-10-14 22:41 Camilo Conde
  evidencias/registro_pruebas_v1.0.txt | 68 ++++++++++++++++++++++++++++++++++++
  5 files changed, 102 insertions(+), 2 deletions(-)
 
-d090e6c 2026-10-14 22:40 Camilo Conde
+d090e6c 2026-10-14 17:40 Camilo Conde
     README: instalación, ejecución, formato de contenido, rutas a los finales y limitaciones
 
  README.md                     | 174 ++++++++++++++++++++++++++++++++++++++++--
@@ -64,7 +167,7 @@ d090e6c 2026-10-14 22:40 Camilo Conde
  docs/informe/03_requisitos.md |   2 +-
  3 files changed, 172 insertions(+), 10 deletions(-)
 
-e0aecbc 2026-10-14 22:40 Camilo Conde
+e0aecbc 2026-10-14 17:40 Camilo Conde
     Verificación de RNF01-RNF03; corrige cierre de la consola con dígitos Unicode hallado por RNF03
 
  interfaz/consola.py      |   2 +-
@@ -74,13 +177,13 @@ e0aecbc 2026-10-14 22:40 Camilo Conde
  tests/test_rnf.py        |  41 +++++++++
  5 files changed, 272 insertions(+), 4 deletions(-)
 
-bcabfe2 2026-10-14 22:39 Camilo Conde
+bcabfe2 2026-10-14 17:39 Camilo Conde
     Segunda historia: El faro de Punta Gris (4 escenas, una condición y un efecto)
 
  historias/el_faro.json | 67 ++++++++++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 67 insertions(+)
 
-4d4957f 2026-10-14 22:38 Camilo Conde
+4d4957f 2026-10-14 17:38 Camilo Conde
     Capa de interfaz: consola, punto de entrada jugar.py y prueba de integración I1
 
  interfaz/__init__.py         |   1 +
@@ -89,7 +192,7 @@ bcabfe2 2026-10-14 22:39 Camilo Conde
  tests/test_i1_integracion.py |  61 +++++++++++++++++++++++++
  4 files changed, 221 insertions(+)
 
-db148cf 2026-10-14 22:38 Camilo Conde
+db148cf 2026-10-14 17:38 Camilo Conde
     Capa de reglas: sesión con opciones condicionadas, efectos, reinicio y bloqueo (U1-U3, U5)
 
  motor/sesion.py     |  80 ++++++++++++++++++++++++++++++++++
@@ -97,7 +200,7 @@ db148cf 2026-10-14 22:38 Camilo Conde
  tests/test_motor.py | 123 ++++++++++++++++++++++++++++++++++++++++++++++++++++
  3 files changed, 216 insertions(+)
 
-4be5725 2026-10-14 22:37 Camilo Conde
+4be5725 2026-10-14 17:37 Camilo Conde
     Capa de contenido: modelo, cargador y validador con pruebas U4 parametrizadas
 
  historias/invalidas/archivo_ilegible.json      |   5 +
@@ -124,7 +227,7 @@ db148cf 2026-10-14 22:38 Camilo Conde
  tests/test_u4_validacion.py                    |  90 ++++++++++++
  22 files changed, 1500 insertions(+)
 
-9ddd64c 2026-10-14 22:35 Camilo Conde
+9ddd64c 2026-10-14 17:35 Camilo Conde
     Modelos UML y arquitectura por capas con decisiones ADR-01 y ADR-02
 
  docs/anexo/A1_modelos.md                 | 153 +++++++++++++++++++++++++++++++
@@ -132,20 +235,20 @@ db148cf 2026-10-14 22:38 Camilo Conde
  docs/informe/04_modelado_arquitectura.md |  15 +++
  3 files changed, 198 insertions(+)
 
-1f252a7 2026-10-14 22:34 Camilo Conde
+1f252a7 2026-10-14 17:34 Camilo Conde
     Corrige RF04 tras revisión cruzada de requisitos
 
  docs/informe/03_requisitos.md | 10 +++++++++-
  1 file changed, 9 insertions(+), 1 deletion(-)
 
-bf6973a 2026-10-14 22:34 Camilo Conde
+bf6973a 2026-10-14 17:34 Camilo Conde
     Requisitos funcionales, no funcionales y preguntas al cliente
 
  docs/informe/01_fundamentos.md |  2 +-
  docs/informe/03_requisitos.md  | 38 ++++++++++++++++++++++++++++++++++++++
  2 files changed, 39 insertions(+), 1 deletion(-)
 
-fd71a4a 2026-10-14 22:33 Camilo Conde
+fd71a4a 2026-10-14 17:33 Camilo Conde
     Estructura inicial: historia de referencia, alcance, riesgos y proceso
 
  .gitignore                           |   7 +++
