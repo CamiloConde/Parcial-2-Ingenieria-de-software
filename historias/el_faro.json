@@ -7,12 +7,12 @@
   "escenas": [
     {
       "id": "F1",
-      "texto": "Una tormenta apagó el faro de Punta Gris y un barco pesquero se acerca a las rocas. El guardián llega al acantilado empapado.",
+      "texto": "Un rayo apagó el faro de Punta Gris y, entre olas que revientan contra el acantilado, las luces de un pesquero avanzan a ciegas hacia las rocas. El guardián llega empapado, con el viento arrancándole la capucha, y sabe que solo tiene unos minutos.",
       "final": false,
       "opciones": [
         {
           "id": "cobertizo",
-          "texto": "Buscar en el cobertizo",
+          "texto": "Revisar el cobertizo de herramientas",
           "destino": "F2",
           "condiciones": {},
           "efectos": {
@@ -21,7 +21,7 @@
         },
         {
           "id": "correr",
-          "texto": "Correr directo al faro",
+          "texto": "Subir corriendo hacia el faro",
           "destino": "F2",
           "condiciones": {},
           "efectos": {}
@@ -30,12 +30,12 @@
     },
     {
       "id": "F2",
-      "texto": "La puerta de hierro del faro está cerrada. Las luces del barco se ven cada vez más cerca.",
+      "texto": "La puerta de hierro del faro está cerrada con candado y el óxido cruje bajo sus manos. Abajo, las luces del barco ya se ven tan cerca que puede distinguir las siluetas en la cubierta.",
       "final": false,
       "opciones": [
         {
           "id": "abrir",
-          "texto": "Abrir con la llave del cobertizo",
+          "texto": "Abrir el candado con la llave oxidada",
           "destino": "F3",
           "condiciones": {
             "tiene_llave": true
@@ -44,7 +44,7 @@
         },
         {
           "id": "esperar",
-          "texto": "Esperar a que pase la tormenta",
+          "texto": "Refugiarse en el portal y esperar a que amaine",
           "destino": "F4",
           "condiciones": {},
           "efectos": {}
@@ -53,13 +53,13 @@
     },
     {
       "id": "F3",
-      "texto": "La lámpara vuelve a girar. El barco corrige el rumbo y entra al puerto sin daños.",
+      "texto": "El candado cede, el guardián sube los escalones de dos en dos y la gran lámpara vuelve a girar sobre la tormenta. El pesquero vira justo a tiempo y entra al puerto sin un rasguño, saludando con la bocina.",
       "final": true,
       "opciones": []
     },
     {
       "id": "F4",
-      "texto": "Amanece. El barco encalló en la arena, pero la tripulación llegó a la orilla a nado.",
+      "texto": "El amanecer encuentra el mar en calma y el pesquero encallado en la arena, con el casco abierto. La tripulación alcanzó la orilla a nado, agotada pero viva, y nadie en Punta Gris olvidará la noche en que el faro se quedó a oscuras.",
       "final": true,
       "opciones": []
     }
